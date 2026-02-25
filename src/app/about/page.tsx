@@ -13,6 +13,9 @@ import about from "../../../public/assets/images/about/about.png";
 import Cta from "../../../public/assets/images/cta.png";
 import ship from "../../../public/assets/images/about/ship.png";
 import whiteh from "../../../public/assets/images/whiteH.png";
+import breeam from "../../../public/assets/images/about/icon/1.png"
+import international from "../../../public/assets/images/about/icon/2.png"
+import building from "../../../public/assets/images/about/icon/3.png"
 
 
 
@@ -22,64 +25,26 @@ const images = [
   "/assets/images/about/team/1.png",
   "/assets/images/about/team/2.png",
 ];
-// Hero bg - team/office photo
-const leafIcon = "https://www.figma.com/api/mcp/asset/be7d38da-e21c-41eb-8bda-9577aee6a92a";
-const teamImg1 = "https://www.figma.com/api/mcp/asset/0ed1a1ae-9a38-454c-aaf6-a1598dc522a1";
-const teamImg2 = "https://www.figma.com/api/mcp/asset/d6c687a5-dd92-42bc-97c2-a3e009a31e58";
-const teamImg3 = "https://www.figma.com/api/mcp/asset/7212592c-5129-4a21-aafc-d0bb6e0ddc13";
 
 const dnaItems = [
   {
-    title: "Entrepreneurial Spirit",
-    text: "Your team must start seeing customers as assets before you can start managing them strategically."
+    title: "Entrepreneurial Experience",
+    text: "Time-tested expertise across diverse sectors and markets, committed to value-creation, and not wavered by short-term market conditions."
   },
   {
-    title: "Client Centricity",
-    text: "Always putting the needs and best interests of clients first, building trust and loyalty through every interaction."
+    title: "Passion-Forward ",
+    text: "A zeal for ‘disruptors’, driving investments in developed, emerging, and frontier markets, that goes beyond traditional private equity constraints."
   },
   {
-    title: "Global Partnerships",
-    text: "Collaboration with world-class partners, fostering relationships built on mutual respect and shared vision."
+    title: "Patient Partnership",
+    text: "Shared purpose, risks and rewards, based on mutual trust and values for co-prosperity. Partnering founders, management, and co-investors"
   },
   {
-    title: "Strategic Collaboration",
-    text: "Putting the needs and best interests of clients first, building trust and loyalty through every interaction."
+    title: "Proactive Collaboration",
+    text: "Strategic and tactical mentorship with our in-house, agile advisory for transparency across stakeholders."
   },
 ];
 
-const timeline = [
-  {
-    year: "1925",
-    title: "Foundation",
-    text: "The Hayaat family business established its roots with humble origins and a clear vision.",
-  },
-  {
-    year: "2000",
-    title: "Global Expansion",
-    text: "The Group expanded its investment footprint across multiple continents and asset classes.",
-  },
-  {
-    year: "2002",
-    title: "Hayaat Group",
-    text: "Formalisation of the single family office structure to manage growing multi-asset portfolios.",
-  },
-];
-
-const awards = [
-  { label: "Gold Award", body: "Best Family Office — MENA Region, 2023" },
-  { label: "Silver Award", body: "Excellence in Real Estate Investment, 2022" },
-  { label: "Bronze Award", body: "Venture Capital Innovation Award, 2021" },
-];
-
-const teamMembers = [
-  { name: "Ahmed Al Hayaat", role: "Chairman & Principal", image: teamImg1 },
-  { name: "Khalid Al Hayaat", role: "Managing Director",    image: teamImg2 },
-  { name: "Sara Hayaat",      role: "Chief Investment Officer", image: teamImg3 },
-];
-
-// export const metadata = {
-//   title: "Who We Are — Hayaat Group",
-// };
 
 export default function AboutPage() {
   return (
@@ -161,7 +126,8 @@ export default function AboutPage() {
       </div>
 
       {/* Meet Our Team */}
-      <section className="bg-[#3F3B33]">
+      <div className="bg-[#3F3B33] relative">
+        <Image src={Icon} alt="leafe" width={37} height={75} className="absolute top-[50px] left-[50px] z-20"/>
         <div className="container border-l-[1.83px] border-[#A58F77]">
           <div className="pb-[200px] pt-[67px]">
             <h2 className="text-[72px] text-center text-[#BFAF9D] mb-[200px]">Meet Our Team</h2>            
@@ -211,15 +177,15 @@ export default function AboutPage() {
                 
                 <h2 className="text-[28px] mb-[10px] leading-[1] text-[#BFAF9D]" >Mohammed Ikhlaq</h2>
                 <p className="text-white Inter text-[18px]">Founder & Group Managing Director</p>
-                <button className="mt-[20px] relative inline-block  text-[#bfaf9d] font-light text-[14px] px-8 py-3 hover:bg-[#bfaf9d] hover:text-[#3d3830] transition-colors  tracking-wide"
-              >
-                <Image  src={Cta} alt="Cta" width={205} height={63} className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
-                Read More
-              </button>
+                <button className="mt-[20px] relative inline-block  text-[#bfaf9d] font-light text-[14px] px-8 py-3  transition-colors  tracking-wide"
+                >
+                  <Image  src={Cta} alt="Cta" width={205} height={63} className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
+                  Read More
+                </button>
               </div>            
           </div>
         </div>
-      </section>
+      </div>
 
       {/* We've Come A Long Way — Timeline */}      
       <div className="container border-l-[1.83px] border-[#A58F77]">
@@ -328,6 +294,58 @@ export default function AboutPage() {
       
      
       {/* Global Recognition */}
+      <div className="bg-[#3F3B33] pb-[15px]">
+        <div className="container custompl border-l-[1.8px] border-[#A58F77]">
+          <div className="pl-[80px] py-[75px]">
+            <h2 className="pl-[20px] text-[72px] text-[#BFAF9D] mb-[40px]">Global Recognition</h2>
+            <div className="">
+              {/* 1 */} 
+              <div className="grid grid-cols-2 items-center mb-[72px]">
+                  <div className=" flex items-center">
+                    <Image src={breeam} alt="hero image" style={{"width": '284', height: '174'}} className="block" />
+                    <div className="pl-[31px]">
+                      <h2 className="text-[36px] text-[#BFAF9D] uppercase">BREEAM</h2>
+                      <p className="text-white text-[16px] Inter leading-[1.2]">World-Leading Building Sustainability Assessor </p>
+                    </div>
+                  </div>
+                  <div className="pl-[32px] ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Category: Sustainable building</p>
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Year: 2012</p>
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Project: The Green, University of Bradford, UK</p>
+                  </div>
+              </div>
+              {/* 2 */}
+              <div className="grid grid-cols-2 items-center mb-[72px]">
+                  <div className=" flex items-center">
+                    <Image src={international} alt="hero image" style={{"width": '284', height: '174'}} className="block" />
+                    <div className="pl-[31px]">
+                      <h2 className="text-[36px] text-[#BFAF9D]  leading-[1]">International Green Apple Awards</h2>                      
+                    </div>
+                  </div>
+                  <div className="pl-[32px] ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Category: Environmental best practice in building</p>
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Year: 2012</p>
+                    <p className="text-white text-[16px] leading-[1.2] Inter">ProjectProject: The Green, University of Bradford, UK</p>
+                  </div>
+              </div>
+              {/* 3 */}
+              <div className="grid grid-cols-2 items-center mb-[72px]">
+                  <div className=" flex items-center">
+                    <Image src={international} alt="hero image" style={{"width": '284', height: '174'}} className="block" />
+                    <div className="pl-[31px]">
+                      <h2 className="text-[36px] text-[#BFAF9D] leading-[1]">Building  Awards</h2>                      
+                    </div>
+                  </div>
+                  <div className="pl-[32px] ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Category: Recognition of excellence in building</p>
+                    <p className="text-white text-[16px] mb-[3px] leading-[1.2] Inter">Year: 2012</p>
+                    <p className="text-white text-[16px] leading-[1.2] Inter">ProjectProject: The Green, University of Bradford, UK </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
      
     </main>
   );

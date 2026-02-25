@@ -1,168 +1,120 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Link from "next/link";
+"use client";
+import Image from "next/image";
+import {Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import hero from "../../../public/assets/images/international/hero.png"
+import leafe from "../../../public/assets/images/leafe.png";
 
-const heroBg   = "https://www.figma.com/api/mcp/asset/d6c687a5-dd92-42bc-97c2-a3e009a31e58";
-const leafIcon = "https://www.figma.com/api/mcp/asset/be7d38da-e21c-41eb-8bda-9577aee6a92a";
-const img1     = "https://www.figma.com/api/mcp/asset/7212592c-5129-4a21-aafc-d0bb6e0ddc13";
-const img2     = "https://www.figma.com/api/mcp/asset/0ed1a1ae-9a38-454c-aaf6-a1598dc522a1";
-const folio1   = "https://www.figma.com/api/mcp/asset/d7ef4097-fc0b-4f75-858c-fac4a2953def";
-const folio2   = "https://www.figma.com/api/mcp/asset/d6c687a5-dd92-42bc-97c2-a3e009a31e58";
-const folio3   = "https://www.figma.com/api/mcp/asset/7212592c-5129-4a21-aafc-d0bb6e0ddc13";
 
-const subNavItems = ["Project Development", "Property Management", "Asset Management"];
-
-const relatedFolio = [
-  { title: "Al Hayaat Luxury Villas",  location: "UAE",  image: folio1 },
-  { title: "The Green, Bradford",      location: "UK",   image: folio2 },
-  { title: "Hayaat Business Park",     location: "KSA",  image: folio3 },
+const images = [
+  "/assets/images/home/card/1.jpg",
+  "/assets/images/home/card/2.jpg",
+  "/assets/images/home/card/3.jpg", 
+  "/assets/images/home/card/4.jpg", 
 ];
-
-export const metadata = {
-  title: "Investments — Hayaat Group",
-};
 
 export default function InvestmentsPage() {
   return (
-    <main>
+    <main>      
       {/* Hero */}
-      <section className="relative w-full h-[70vh] min-h-[500px] max-h-[760px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${heroBg}')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/65" />
-        <Navbar />
-        <div className="absolute bottom-[12%] left-[13%]">
-          <h1 className="font-antic text-white text-[52px] lg:text-[64px] leading-tight">Real Estate</h1>
+      <div className="relative">
+        <div className="image">
+          <Image src={hero} alt="hero image" style={{"width": '100%', height: '810'}} className="block" />        
         </div>
-      </section>
-
-      {/* Sub-nav */}
-      <section className="bg-[#6b6355]">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-20 py-6">
-          <div className="flex flex-wrap gap-3">
-            {subNavItems.map((item, i) => (
-              <button
-                key={item}
-                className={`px-5 py-2 text-sm font-light tracking-wide border transition-colors ${
-                  i === 0
-                    ? "border-[#bfaf9d] text-[#3d3830] bg-[#bfaf9d]"
-                    : "border-[#bfaf9d]/50 text-[#bfaf9d] hover:border-[#bfaf9d]"
-                }`}
-              >
-                {item}
-              </button>
-            ))}
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/50">
+          <div className="container mx-auto ">
+            <h1 className="pb-[100px] ml-[90px] block text-[58px] lg:text-[70px] leading-[1.2] text-white">Global Investment<br /> Partnerships </h1>
           </div>
         </div>
-      </section>
-
-      {/* Body intro */}
-      <section className="bg-[#6b6355] py-16">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-20">
-          <div className="flex gap-8 items-start">
-            <img src={leafIcon} alt="" className="w-10 flex-shrink-0 mt-1" />
-            <div className="text-[#bfaf9d] font-light text-[16px] leading-[1.9] max-w-[680px] space-y-4">
-              <p>
-                The Hayaat Group invests in high-value opportunities across the real estate sector: from
-                development to investment asset management, structuring and capital management. As a
-                foundational pillar of our portfolio, the focus is on locations and opportunities that offer
-                durable value, rooted in strategic insight, disciplined execution, and aligned partnerships.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature project */}
-      <section className="bg-[#3d3830] py-20">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left: image + caption */}
+      </div>            
+      {/* Body intro */} 
+      <div className="pt-[114px] relative bg-[#3F3B33]">                          
+        <div className="container relative z-20">            
+          <div className="text  flex items-start pb-[90px]">
+            <span className="inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span>
+            <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 -left-[36px]"/>                  
             <div>
-              <div className="overflow-hidden mb-3" style={{ height: "320px" }}>
-                <img src={img1} alt="The Green" className="w-full h-full object-cover" />
+              <p className="mb-[45px] text-[31.5px] text-[#BFAF9D] pl-[90px]">
+                At Hayaat Group, we deploy patient, principal capital across a 
+                diversified platform of investments — from building communities to 
+                backing ideas, scaling businesses, and managing global portfolios. Our 
+                approach is long-term, disciplined, and informed by deep sector 
+                experience and macroeconomic perspective.
+              </p>
+              <p className="mb-[45px] text-[31.5px] text-[#BFAF9D] pl-[90px]">
+                We invest across four core areas: real estate, venture capital, growth 
+                equity, and global capital markets. Each area reflects our belief in 
+                high-conviction investing, strategic alignment with partners, and the 
+                pursuit of value that compounds over time. Our strategy focuses on 
+                combining the Hayaat DNA- our core values, strengths, and passionate 
+                teams.                    
+              </p>
+              <p className="text-[31.5px] text-[#BFAF9D] pl-[90px]">
+                As active operators or long-term capital partners, we bring a 
+                combination of agility and structure to every investment. What unites 
+                our work across sectors is a shared commitment to thoughtful 
+                deployment, strong governance, and creating outcomes that endure 
+                beyond market cycles.                      
+              </p>
+            </div>
+          </div>                      
+        </div>
+      </div>   
+      {/* Feature project */}    
+      <div className="bg-[#3F3B33] ">
+        <div className="container  border-[#A58F77] border-l-[1.8px] ">                             
+          <div className="pb-[90px] pl-[90px]">
+            {/* Cards */}
+            <div className="relative">
+              <div className="slider">
+                <Swiper
+                  modules={[ Navigation]}
+                  loop
+                  navigation={{
+                    prevEl: ".custom-prev",
+                    nextEl: ".custom-next",
+                  }}
+                  slidesPerView={3}
+                  spaceBetween={30}
+                  autoplay={{ delay: 3000 }}
+                >
+                  {images.map((src, index) => (
+                    <SwiperSlide key={index}>
+                      <Image
+                        src={src}
+                        alt={`Slide ${index}`}
+                        width={400}
+                        height={545}
+                        className="w-full h-auto object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
-              <p className="text-[#bfaf9d]/70 font-light text-xs leading-relaxed">
-                Showcase: The Green, Sustainable student village (SSV)<br />
-                Location: On campus, University of Bradford (UoB), UK<br />
-                Location: 2010
-              </p>
-            </div>
-
-            {/* Right: text */}
-            <div className="text-[#bfaf9d] font-light text-[15px] leading-[1.9] space-y-4">
-              <p>
-                At the Hayaat Group, our investment strategy is guided by generational enterprise and
-                time-tested expertise. We function as principal investor across thoughtfully diversified
-                areas, balancing active capital deployment in strategic ventures with disciplined
-                stewardship of long-term assets. These focus areas reflect our progressive approach, and
-                our exciting vision for the future.
-              </p>
-            </div>
-          </div>
-
-          {/* Long description */}
-          <div className="mt-12 text-[#bfaf9d] font-light text-[15px] leading-[1.9] space-y-5">
-            <p>
-              Hayaat Group was invited by the University of Bradford to develop The Green, an innovative
-              1,039-bed on-campus sustainable residential complex. The result was the UK&apos;s largest
-              single-phase development of bed spaces ever attempted, completed in a record timeline of just
-              84 weeks following the purchase of more than 20 acres of land in Bradford City Centre by the
-              Group. This project was delivered on a very tight budget, and in time, despite an economic
-              downturn that brought many of the UK&apos;s major developments to a halt.
-            </p>
-            <p>
-              The Green remains a flagship project for the Hayaat Group, winning multiple awards for
-              building sustainability, and securing our status as a key player in the £750million development
-              of the Learning Quarter in Bradford City Centre, in partnership with Bradford Council. Among
-              its many accolades, The Green was the first multi-residential building in the UK to achieve
-              the BREEAM sustainability assessment &apos;outstanding&apos; rating, as well as the country&apos;s highest
-              ever score of 90.09%. It is now seen as the benchmark in sustainable construction.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Folio */}
-      <section className="bg-[#6b6355] py-20">
-        <div className="max-w-[1200px] mx-auto px-8 lg:px-20">
-          <h2 className="font-antic text-white text-[36px] lg:text-[44px] mb-10">Related Folio</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedFolio.map((item) => (
-              <Link key={item.title} href="#" className="group block">
-                <div className="overflow-hidden mb-3" style={{ height: "220px" }}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+              {/* Arrow navigation */}
+              <div className="flex justify-between mt-[62px]">          
+                <div className="custom-prev  cursor-pointer">
+                  <svg width="35" height="35" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.4004 55.9C43.5882 55.9 55.9004 43.5879 55.9004 28.4C55.9004 13.2122 43.5882 0.900024 28.4004 0.900024C13.2126 0.900024 0.900391 13.2122 0.900391 28.4C0.900391 43.5879 13.2126 55.9 28.4004 55.9Z" stroke="#A58F77" stroke-width="1.8" stroke-miterlimit="10"/>
+                      <path d="M42.9218 28.4H14.3008" stroke="#A58F77" stroke-width="1.8" stroke-miterlimit="10"/>
+                      <path d="M23.9226 18.7781L14.3008 28.4L23.9226 38.0111" stroke="#A58F77" stroke-width="1.8" stroke-miterlimit="10"/>
+                    </svg>
                 </div>
-                <h3 className="font-antic text-white text-lg group-hover:text-[#bfaf9d] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-[#bfaf9d]/70 font-light text-xs mt-1">{item.location}</p>
-              </Link>
-            ))}
+                <div className="custom-next  cursor-pointer">
+                  <svg width="35" height="35" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.4003 55.9C43.5881 55.9 55.9004 43.5879 55.9004 28.4C55.9004 13.2122 43.5881 0.900024 28.4003 0.900024C13.2125 0.900024 0.900391 13.2122 0.900391 28.4C0.900391 43.5879 13.2125 55.9 28.4003 55.9Z" stroke="#A58F77" stroke-width="1.8" stroke-miterlimit="10"/>
+                      <path d="M13.8887 28.4H42.4991" stroke="#A58F77" stroke-width="1.8" stroke-miterlimit="10"/>
+                      <path d="M32.8887 18.7781L42.5 28.4L32.8887 38.0111" stroke="#A58F77" stroke-width="1.8" stroke-miterlimit="10"/>
+                    </svg>
+                
+                </div>
+              </div>
+            </div>           
           </div>
-
-          {/* Nav arrows */}
-          <div className="flex justify-between mt-8">
-            <button className="flex items-center gap-2 text-[#bfaf9d] font-light text-sm hover:opacity-70 transition-opacity">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 18l-6-6 6-6"/></svg>
-              Al Hayaat Luxury Villa
-            </button>
-            <button className="flex items-center gap-2 text-[#bfaf9d] font-light text-sm hover:opacity-70 transition-opacity">
-              Next Project
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
+        </div>      
+      </div>          
     </main>
   );
 }

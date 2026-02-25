@@ -7,15 +7,13 @@ import AboutSection from "@/components/sections/AboutSection";
 
 export default function Home() {
   return (
-    <main>
-      
+    <main>      
       <HomeHero />
       <HomeIntro />
       <AboutSection />
       <FutureInFocus />
       <SeedsOfSuccess />
-      <LatestInvestments />
-      
+      <LatestInvestments />      
     </main>
   );
 }
