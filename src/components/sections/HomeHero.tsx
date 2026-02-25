@@ -22,7 +22,7 @@ export default function HomeHero() {
              <source src="/assets/images/home/video.mp4"></source>
             </video>
       </div>
-      <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center bg-black/20">
+      <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center bg-black/50">
         <div className="container mx-auto ">
           <h1 className="pt-[100px] ml-[100px] block text-[58px] lg:text-[70px] leading-[1.2] text-white max-w-[528px]">Where<br /> financial growth comes to life.</h1>
         </div>

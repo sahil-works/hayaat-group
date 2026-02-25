@@ -7,7 +7,7 @@ const navLinks = ["Who are we", "What we do", "Investments", "News"];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#7E6952] text-white pt-[130px] pb-[160px]">
+    <footer className="bg-[#7E6952] text-white pt-[130px] pb-[140px]">
       <div className="container">
         <div className="grid grid-cols-2 gap-[50px]">
           <div className="item">
