@@ -16,6 +16,7 @@ import whiteh from "../../../public/assets/images/whiteH.png";
 import breeam from "../../../public/assets/images/about/icon/1.png"
 import international from "../../../public/assets/images/about/icon/2.png"
 import building from "../../../public/assets/images/about/icon/3.png"
+import Footer from "@/components/Footer";
 
 
 
@@ -329,7 +330,7 @@ export default function AboutPage() {
             <h2 className="pl-[20px]  text-[35px] md:text-[53px] lg:text-[72px] text-[#BFAF9D] mb-[40px]">Global Recognition</h2>
             <div className="">
               {/* 1 */} 
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px] border-b-[1px] border-[#A58F77] md:border-0">
                   <div className=" md:flex items-center flex-wrap">
                     <div className="md:w-[50%]">
                       <Image src={breeam} alt="hero image" style={{"width": '284', height: '174'}} className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0 " />
@@ -346,12 +347,12 @@ export default function AboutPage() {
                   </div>
               </div>
               {/* 2 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px]  border-b-[1px] border-[#A58F77] md:border-0">
                   <div className=" md:flex items-center flex-wrap">
                     <div className="md:w-[50%]">
                       <Image src={international} alt="hero image" style={{"width": '284', height: '174'}} className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0 " />
                     </div>
-                    <div className="pl-0 md:pl-[31px] w-[50%]">
+                    <div className="pl-0 md:pl-[31px] md:w-[50%]">
                       <h2 className="text-[25px] md:text-[36px] text-[#BFAF9D]  leading-[1]">International Green Apple Awards</h2>                      
                     </div>
                   </div>
@@ -364,10 +365,10 @@ export default function AboutPage() {
               {/* 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px]">
                   <div className=" md:flex items-center flex-wrap">
-                    <div className="w-[50%]">
-                      <Image src={international} alt="hero image" style={{"width": '284', height: '174'}} className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0 " />
+                    <div className="md:w-[50%]">
+                      <Image src={international} alt="hero image" style={{"width": '284', height: '174'}} className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0" />
                     </div>
-                    <div className="pl-0 md:pl-[31px] w-[50%]">
+                    <div className="pl-0 md:pl-[31px] md:w-[50%]">
                       <h2 className="text-[25px] md:text-[36px] text-[#BFAF9D] leading-[1]">Building  Awards</h2>                      
                     </div>
                   </div>
@@ -381,6 +382,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      <Footer />
      
     </main>
   );

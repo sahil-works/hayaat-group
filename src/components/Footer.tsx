@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/assets/images/logo.png";
 import SocialIcons from "../../public/assets/images/socialIcons.png";
+import facebook from "../../public/assets/images/socail/1.svg";
+import instagram from "../../public/assets/images/socail/2.svg";
+import youtube from "../../public/assets/images/socail/3.svg";
+import linkedin from "../../public/assets/images/socail/4.svg";
+
 
 const navLinks = ["Who are we", "What we do", "Investments", "News"];
 
@@ -17,7 +22,28 @@ export default function Footer() {
                   <Link href="/" className="inline-block">
                     <Image src={Logo} alt="Logo image" width={132} height={130} className="" />
                   </Link>
-                  <Image src={SocialIcons} alt="Logo image" width={132} height={130}  className="mt-[60px]"/>
+                  <ul className="mt-[30px] md:mt-[60px] flex items-center">
+                    <li className="pr-[22px]">
+                      <Link href="#">
+                        <Image src={facebook} alt="facebook icon" width={41} height={41} />
+                      </Link>
+                    </li>   
+                    <li className="pr-[22px]">
+                      <Link href="#">
+                        <Image src={instagram} alt="facebook icon" width={41} height={41} />
+                      </Link>
+                    </li>   
+                    <li className="pr-[22px]">
+                      <Link href="#">
+                        <Image src={youtube} alt="facebook icon" width={41} height={41} />
+                      </Link>
+                    </li>   
+                    <li className="">
+                      <Link href="#">
+                        <Image src={linkedin} alt="facebook icon" width={41} height={41} />
+                      </Link>
+                    </li>                  
+                  </ul>                  
               </div>
               </div> 
             </div>

@@ -10,6 +10,7 @@ import leafe from "../../../public/assets/images/leafe.png";
 import Cta from "../../../public/assets/images/cta2.png";
 import Ctabg from "../../../public/assets/images/ctabg.png";
 import blog from "../../../public/assets/images/realEstate/blog.jpg"
+import Footer from "@/components/Footer";
 
 
 
@@ -112,7 +113,7 @@ export default function NewsPage() {
         </div>
       </div>
       {/*  */}
-    <div className="bg-[#3F3B33] relative">        
+      <div className="bg-[#3F3B33] relative">        
         <div className="container border-l-[1.8px] border-[#A58F77]">
           <div className="pb-[60px] md:pb-[80px] lg:pb-[150px] pt-[67px]">
             <h2 className="md:pl-[111px] text-[40px] sm:text-[42px] md:text-[60px] xl:text-[72px] text-left text-[#BFAF9D]  mb-[40px] lg:mb-[80px] xl:mb-[200px]">Related Folio</h2>            
@@ -181,6 +182,7 @@ export default function NewsPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

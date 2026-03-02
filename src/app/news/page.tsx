@@ -1,5 +1,6 @@
 import Image from "next/image";
 import hero from "../../../public/assets/images/realEstate/hero.jpg"
+import Footer from "@/components/Footer";
 
 
 export const metadata = {
@@ -18,7 +19,8 @@ export default function WhatWeDoPage() {
               <h1 className="block text-[50px] md:text-[80px] xl:text-[100px] leading-[1.2] text-white capitalize px-[15px] md:px-0">coming soon </h1>
             </div>
           </div>
-        </div>      
+      </div>      
+      <Footer />
     </main>    
   );
 }

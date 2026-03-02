@@ -21,28 +21,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <nav className="absolute top-0 left-0 right-0 z-50 flex items-start justify-between px-8 pt-7">
-        
-        <Link href="/" className="flex flex-col items-center gap-[3px]">
-          <div className="w-8 h-8 border border-white flex items-center justify-center">
-            <span className="font-antic text-white text-xl leading-none select-none">H</span>
-          </div>
-          <span className="text-white text-[7px] font-light tracking-[0.22em] uppercase select-none">
-            HAYAAT GROUP
-          </span>
-        </Link>
-
-        
-        <button
-          onClick={() => setOpen(true)}
-          className="flex flex-col gap-[5px] cursor-pointer p-2 mt-1 group"
-          aria-label="Open menu"
-        >
-          <span className="block w-6 h-px bg-white transition-all group-hover:w-5" />
-          <span className="block w-6 h-px bg-white" />
-          <span className="block w-6 h-px bg-white transition-all group-hover:w-4" />
-        </button>
-      </nav> */}
+      
       <div className="hidden">
        <div
           className={`fixed inset-0 z-[100] transition-opacity duration-400 ${
@@ -124,31 +103,31 @@ export default function Navbar() {
         </div>
 
         {/* Overlay */}
-        <div className={`fixed  left-0 right-0 bottom-0 h-[100%] bg-[#3E3E3E] z-[99] pt-[70px] px-[88px] transition-all duration-500 ease-in-out  ${
+        <div className={`fixed  left-0 right-0 bottom-0 h-[100%] bg-[#3E3E3E] z-[99] pt-[30px] md:pt-[50px] xl:pt-[70px] px-[0] md:px-[40px] xl:px-[88px] transition-all duration-500 ease-in-out  ${
             open ? "top-0" : "-top-[200%]"
           }`}>
             <div className="container mx-auto">
                 <div className="flex justify-between items-start">
                     <div className="image">
                       <Link href="/" className="inline-block">
-                        <Image src={Logo} alt="Logo image" width={132} height={130} />
+                        <Image src={Logo} alt="Logo image" width={132} height={130} className="h-[80px] lg:h-auto object-contain" />
                       </Link>
                     </div>
                     <button
                       onClick={() => setOpen(false)}
                       className="text-[#C4C4C4] text-[20px] leading-none hover:text-[#bfaf9d] transition-colors flex items-center"
                     >
-                      ✕ <span className="inline-block pl-[10px] text-[12px]">MENU</span>
+                      ✕ <span className="inline-block pl-[10px] text-[18px]">MENU</span>
                     </button>
                 </div>                
                 {/* Nav links */}
-                <ul className="pt-[70px] ">
+                <ul className="pt-[40px] xl:pt-[70px] pl-[20px] md:pl-0">
                   {navLinks.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
                         onClick={() => setOpen(false)}
-                        className={`font-antic text-[36px] mb-[20px] inline-block leading-tight transition-colors hover:text-[#bfaf9d] ${
+                        className={`font-antic md:text-[20px] text-[25px] xl:text-[36px] mb-[20px] inline-block leading-tight transition-colors hover:text-[#bfaf9d] ${
                           pathname === link.href ? "text-[#bfaf9d]" : "text-white"
                         }`}
                       >
