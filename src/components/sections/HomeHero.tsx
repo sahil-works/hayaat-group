@@ -17,14 +17,14 @@ export default function HomeHero() {
             muted
             loop
             playsInline
-            className="w-full h-auto"
+            className="w-full h-full min-h-[550px] sm:min-h-[650px] lg:min-h-screen xl:min-h-[809px] object-cover"
           >
              <source src="/assets/images/home/video.mp4"></source>
-            </video>
+          </video>
       </div>
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center bg-black/50">
         <div className="container mx-auto ">
-          <h1 className="pt-[100px] ml-[100px] block text-[58px] lg:text-[70px] leading-[1.2] text-white max-w-[528px]">Where<br /> financial growth comes to life.</h1>
+          <h1 className="pt-[100px] ml-[20px] xl:ml-[100px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[450px] lg:max-w-[528px]">Where<br /> financial growth comes to life.</h1>
         </div>
       </div>
     </div>

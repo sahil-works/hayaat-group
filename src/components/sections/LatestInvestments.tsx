@@ -15,9 +15,9 @@ export default function LatestInvestments() {
   return (
     <>
    
-    <div className="bg-[#3F3B33] pb-[20px]">
+    <div className="bg-[#3F3B33]">
       <div className="container border-l-[1.8px] border-[#A58F77]">
-        <div className=" pb-[80px] pt-[100px]">
+        <div className=" py-[100px] ">
           <div className="relative "> 
             
             <div className="GallerySlider">
@@ -31,6 +31,21 @@ export default function LatestInvestments() {
                 slidesPerView={3}
                 spaceBetween={30}
                 autoplay={{ delay: 3000 }}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 1,
+                  },
+                
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
               >
                 {images.map((src, index) => (
                   <SwiperSlide key={index}>

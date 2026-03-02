@@ -26,6 +26,13 @@ const config: Config = {
         "400": "400ms",
       },
     },
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "769px",
+      lg: "1024px",
+      xl: "1260px",
+    },
   },
   plugins: [],
 };
