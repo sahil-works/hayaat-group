@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import hero from "../../../public/assets/images/international/hero.png"
 import leafe from "../../../public/assets/images/leafe.png";
+import Footer from "@/components/Footer";
 
 
 const images = [
@@ -25,7 +26,7 @@ export default function InvestmentsPage() {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/50">
           <div className="container mx-auto ">
-            <h1 className="pb-[40px]  pt-[100px] ml-[20px] xl:ml-[100px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[450px] lg:max-w-[570px]">Global Investment<br /> Partnerships </h1>
+            <h1 className="pb-[40px]  pt-[100px] ml-[20px] xl:ml-[100px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[450px] lg:max-w-[570pxgit]">Global Investment<br /> Partnerships </h1>
           </div>
         </div>
       </div>            
@@ -129,7 +130,8 @@ export default function InvestmentsPage() {
             </div>           
           </div>
         </div>      
-      </div>          
+      </div>     
+      <Footer />     
     </main>
   );
 }
