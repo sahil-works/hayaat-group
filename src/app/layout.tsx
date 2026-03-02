@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     default: "Hayaat Group",
     template: "%s | Hayaat Group",
   },
-  description: "Global Investment Partnerships — Real Estate, Venture Capital, Growth Equity, Capital Markets",
+  description:
+    "Global Investment Partnerships — Real Estate, Venture Capital, Growth Equity, Capital Markets",
 };
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }

@@ -100,13 +100,13 @@ export default function Navbar() {
           </div>
        </div>
       </div>     
-      <header className="pt-[50px] absolute top-0 left-0 right-0 z-[99]">
+      <header className="pt-[15px] sm:pt-[30px] lg:pt-[50px] absolute top-0 left-0 right-0 z-[99]">
         <div className="container mx-auto">
           <div className="flex justify-between items-start">
             {/* Logo */}
             <div className="image">
               <Link href="/" className="inline-block">
-                <Image src={Logo} alt="Logo image" width={132} height={130} />
+                <Image src={Logo} alt="Logo image" width={132} height={130} className="h-[80px] lg:h-auto object-contain" />
               </Link>
             </div>
 

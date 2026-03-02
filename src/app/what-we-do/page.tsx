@@ -25,22 +25,22 @@ export default function NewsPage() {
       {/* hero */}
        <div className="relative">
         <div className="image">
-          <Image src={hero} alt="hero image" style={{"width": '100%', height: '810'}} className="block" />        
+          <Image src={hero} alt="hero image" style={{"width": '100%', height: '810'}} className="block h-[500px] md:h-[90vh] xl:h-auto object-cover" />        
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/50">
           <div className="container mx-auto ">
-            <h1 className="pb-[100px] ml-[90px] block text-[58px] lg:text-[70px] leading-[1.2] text-white">Real Estate </h1>
+            <h1 className="pb-[40px] pt-[100px] ml-[20px] xl:ml-[100px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[450px] lg:max-w-[528px]">Real Estate </h1>
           </div>
         </div>
       </div>  
       {/* body intro */}
-       <div className="pt-[114px] relative bg-[#3F3B33]">                          
+       <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] relative bg-[#3F3B33]">                          
         <div className="container relative z-20">            
-          <div className="text  flex items-start pb-[90px]">
-            <span className="inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span>
-            <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 -left-[36px]"/>                  
-            <div className="pl-[90px]">
-              <p className="mb-[74px] text-[31.5px] text-[#BFAF9D] ">
+          <div className="text  flex items-start pb-[30px] md:pb-[50px] xl:pb-[90px]">
+            <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span>
+            <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block" />
+            <div className="pl-0 md:pl-[90px]">
+              <p className="mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] ">
                 The Hayaat Group invests in high value opportunities across the real 
                 estate sector, from development to investments, asset management, 
                 structuring and capital management. As a foundational pillar of our 
@@ -48,20 +48,20 @@ export default function NewsPage() {
                 durable value, rooted in strategic insight, disciplined execution, and 
                 aligned partnerships.
               </p>         
-              <div className="flex justify-between items-center max-w-[95%]">
-                 <button className="relative inline-block  text-[#bfaf9d] font-light text-[24px] px-8 py-3  transition-colors tracking-wide group">
+              <div className="lg:flex flex-wrap  justify-between items-center max-w-[95%]">
+                 <button className="relative mb-[20px] inline-block  leading-[1.5] text-[#bfaf9d] font-light text-[24px] px-8 py-3  transition-colors tracking-wide group">
                     <Image  src={Cta} alt="Cta" width={288} height={55} className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
                     <Image  src={Ctabg} alt="Cta" width={268} height={46.43} className="absolute top-[50%] left-[49%] -translate-x-[50%] -translate-y-[50%] flex justify-center items-center  opacity-0 group-hover:opacity-100 transition-colors" />
                     <span className="relative z-20 group-hover:text-[#3F3B33] transition-colors">Project Development</span>
                   </button>
-                   <button className="relative inline-block  text-[#bfaf9d] font-light text-[24px] px-8 py-3  transition-colors tracking-wide group">
-                    <Image  src={Cta} alt="Cta" width={288} height={55} className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
-                    <Image  src={Ctabg} alt="Cta" width={268} height={46.43} className="absolute top-[50%] left-[46.8%] -translate-x-[50%] -translate-y-[50%] flex justify-center items-center  opacity-0 group-hover:opacity-100 transition-colors" />
-                    <span className="relative z-20 group-hover:text-[#3F3B33] transition-colors">Property Management</span>
+                   <button className="relative mb-[20px] inline-block  leading-[1.5] text-[#bfaf9d] font-light text-[24px] px-6 lg:px-8 py-3  transition-colors tracking-wide group">
+                    <Image  src={Cta} alt="Cta" width={288} height={55} className="lg:mx-auto absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
+                    <Image  src={Ctabg} alt="Cta" width={268} height={46.43} className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] hidden lg:flex justify-center items-center  opacity-0 group-hover:opacity-100 transition-colors" />
+                    <span className="relative z-20 lg:group-hover:text-[#3F3B33] transition-colors">Property Management</span>
                   </button>
-                   <button className="relative inline-block  text-[#bfaf9d] font-light text-[24px] px-8 py-3  transition-colors tracking-wide group">
-                    <Image  src={Cta} alt="Cta" width={288} height={55} className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
-                    <Image  src={Ctabg} alt="Cta" width={250} height={46.43} className="absolute top-[48%] left-[47%] -translate-x-[50%] -translate-y-[50%] flex justify-center items-center  opacity-0 group-hover:opacity-100 transition-colors" />
+                   <button className="relative mb-[20px] inline-block  leading-[1.5] text-[#bfaf9d] font-light text-[24px] px-8 py-3  transition-colors tracking-wide group">
+                    <Image  src={Cta} alt="Cta" width={288} height={55} className="mx-auto absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center " />
+                    <Image  src={Ctabg} alt="Cta" width={250} height={46.43} className="absolute top-[49%] left-[50%] -translate-x-[50%] -translate-y-[50%] flex justify-center items-center  opacity-0 group-hover:opacity-100 transition-colors" />
                     <span className="relative z-20 group-hover:text-[#3F3B33] transition-colors">Asset Management</span>                    
                   </button>
               </div>
@@ -71,27 +71,27 @@ export default function NewsPage() {
       </div> 
       {/* Blog  */}
       <div className="bg-[#BFAF9D]">
-         <div className="container custompl border-l-[1.8px] border-[#A58F77]">
-          <div className=" py-[130px]">
-            <div className="pl-[80px] border-b border-[#A58F77]">
-              <div className="grid grid-cols-[1fr,325px] gap-[50px] pr-[68px] pb-[65px]">
+         <div className="container md:custompl border-l-[1.8px] border-[#A58F77]">
+          <div className="py-[30px] md:py-[90px] lg:py-[130px]">
+            <div className="md:pl-[80px] border-b border-[#A58F77]">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr,325px] gap-[20px] md:gap-[50px] md:pr-[68px] pb-[30px] md:pb-[65px]">
                 <div className="">
                   <Image src={blog} alt="" style={{"width": '100%', height: 'auto'}} />
-                  <p className="mt-[15px] Inter text-[19px] font-medium leading-[1] mb-[10px]">
+                  <p className="mt-[15px] Inter text-[15px] md:text-[19px] font-medium leading-[1] mb-[10px]">
                     Showcase: The Green, Sustainable student village (SSV)
                   </p>
-                  <p className="Inter text-[19px] font-medium leading-[1] mb-[10px]">Location: On campus, University of Bradford (UoB), UK</p>
-                  <p className="Inter text-[19px] font-medium leading-[1]">Location: 2010</p>
+                  <p className="Inter text-[15px] md:text-[19px] font-medium leading-[1] mb-[10px]">Location: On campus, University of Bradford (UoB), UK</p>
+                  <p className="Inter text-[15px] md:text-[19px] font-medium leading-[1]">Location: 2010</p>
                 </div>
                 <div className="">
-                  <p className="Inter font-bold text-[19px] leading-[2]">
+                  <p className="Inter font-bold text-[15px]  md:text-[19px] leading-[2]">
                     At the Hayaat Group, our investment strategy is guided by generational enterprise and time-tested expertise. We function as principal investor across thoughtfully diversified areas, balancing active capital deployment in strategic ventures with disciplined stewardship of long-term assets. These focus areas reflect our progressive commitment to value creation, and evolving vision for the future.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="pl-[80px] pt-[45px] pr-[68px] ">
-              <p className=" Inter text-[19px] font-medium mb-[45px] ">
+            <div className="md:pl-[80px] pt-[25px] md:pt-[45px] md:pr-[68px] ">
+              <p className=" Inter text-[15px] md:text-[19px] font-medium mb-[20px] md:mb-[45px] ">
                 Hayaat Group was invited by the University of Bradford to develop The Green, an ambitious 1,026-bed 
                 on-campus sustainable residential complex. The result was the UK’s largest single-phase 
                 development of bed spaces ever attempted, completed in a record timeline of just 84 weeks following 
@@ -99,7 +99,7 @@ export default function NewsPage() {
                 delivered on a very tight budget, and on time, despite an economic downturn that brought many of the 
                 UK’s major developments to a halt.
               </p>
-              <p className=" Inter text-[19px] font-medium">
+              <p className=" Inter text-[15px] md:text-[19px] font-medium">
                 The Green remains a flagship project for the Hayaat Group, winning multiple awards for building 
                 sustainability, and, ensuring our status as a key player in the £750million development of the Learning 
                 Quarter in Bradford City Centre, in partnership with Bradford Council. Among its many accolades, The 
@@ -111,11 +111,11 @@ export default function NewsPage() {
           </div>
         </div>
       </div>
-    {/*  */}
-    <div className="bg-[#3F3B33] relative pb-[20px]">        
-        <div className="container border-l-[1.83px] border-[#A58F77]">
-          <div className="pb-[150px] pt-[67px]">
-            <h2 className="pl-[111px] text-[72px] text-left text-[#BFAF9D] mb-[200px]">Related Folio</h2>            
+      {/*  */}
+    <div className="bg-[#3F3B33] relative">        
+        <div className="container border-l-[1.8px] border-[#A58F77]">
+          <div className="pb-[60px] md:pb-[80px] lg:pb-[150px] pt-[67px]">
+            <h2 className="md:pl-[111px] text-[40px] sm:text-[42px] md:text-[60px] xl:text-[72px] text-left text-[#BFAF9D]  mb-[40px] lg:mb-[80px] xl:mb-[200px]">Related Folio</h2>            
               <div className="GallerySlider">
                 <Swiper
                   modules={[ Navigation]}
@@ -127,6 +127,21 @@ export default function NewsPage() {
                   slidesPerView={3}
                   spaceBetween={30}
                   autoplay={{ delay: 3000 }}
+                   breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 1,
+                  },
+                
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
                 >
                   {images.map((src, index) => (
                     <SwiperSlide key={index}>
