@@ -19,7 +19,7 @@ export default function HomeHero() {
             playsInline
             className="w-full h-full min-h-[550px] sm:min-h-[650px] lg:min-h-screen xl:min-h-[809px] object-cover"
           >
-             <source src="/assets/images/home/video.mp4"></source>
+             <source src="/assets/images/home/hero.mp4"></source>
           </video>
       </div>
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center bg-black/50">

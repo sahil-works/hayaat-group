@@ -9,7 +9,8 @@ import globe from "../../../public/assets/images/about/globe1.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Icon from "../../../public/assets/images/h.png";
 import pillar from "../../../public/assets/images/about/Pillar.png";
-import about from "../../../public/assets/images/about/about.png";
+import capital from "../../../public/assets/images/about/capital.png";
+import aboutbg from "../../../public/assets/images/about/aboutbg.png";
 import Cta from "../../../public/assets/images/cta.png";
 import ship from "../../../public/assets/images/about/ship.png";
 import whiteh from "../../../public/assets/images/whiteH.png";
@@ -103,12 +104,15 @@ export default function AboutPage() {
       </div>      
 
       {/* Capital Growth dark section */}
-      <div className="relative ">
+      <div className="relative pt-[30px]">
         <span className="block h-[127px] absolute top-0 left-0 right-0 bg-[#BFAF9D] -z-[1]"></span>
         <div className="container md:custompl border-l-[1.8px] border-[#A58F77] ">
           <div className="pb-[40px] md:pb-[90px]">
-            <div className="pl-[20px] md:pl-[47px] md:grid grid-cols-[1fr,290px] pt-[50px] md:pt-0 md:-mt-[20px]">
-              <Image src={about} alt="about" style={{"width": 'auto', height: 'auto'}}  />
+            <div className="pl-0 md:pl-[47px] md:grid grid-cols-[1fr,320px] pt-[50px] md:pt-0 md:-mt-[20px]">
+              <div className="relative group">
+                <Image src={capital} alt="about" style={{"width": 'auto', height: 'auto'}} className="relative z-20" />
+                <Image src={aboutbg} alt="about" style={{"width": 'auto', height: 'auto'}} className="absolute  top-0 right-0  opacity-0 z-10  transition-all duration-500 group-hover:-right-[10px] md:group-hover:-right-[30px] group-hover:-top-[10px] md:group-hover:-top-[30px] group-hover:opacity-100" />
+              </div>
             </div>
             <div className="mt-[25px] md:mt-[45px] md:pl-[111px] md:pb-[46px] md:border-b-[1.8px] border-[#A58F77]">
               <h2 className="font-antic text-[40px] md:text-[53px] lg:text-[72px] mb-[10px] md:mb-[25px]">Capital Growth</h2>
