@@ -3,13 +3,14 @@ import Image from "next/image";
 import arrowRight from "../../../public/assets/images/home/arrowRight.png";
 import house from "../../../public/assets/images/home/house.png";
 import clock from "../../../public/assets/images/home/clock.png";
-import about1 from "../../../public/assets/images/home/about1.png";
+import about1 from "../../../public/assets/images/home/about2.png";
+import about2 from "../../../public/assets/images/home/about3.png";
 
 
 export default function AboutSection() {
   return (
     <>
-    <div className="relative overflow-x-hidden">
+    <div className="relative ">
       <div className="container border-[#A58F77] border-l-[1.8px]">
         <div className="pb-[40px] sm:pb-[70px]">
           <div  className="relative">            
@@ -22,8 +23,13 @@ export default function AboutSection() {
                 <Image src={house} alt="House image" style={{"width": 'auto', height: 'auto'}}  />
               </div>
               <div className="sm:flex pl-0 md:pl-[40px] items-center pr-[10px] sm:pr-0">
-                <Image src={clock} alt="clock image" width={280} height={554} className="mr-0 sm:-mr-[60px] w-auto -mt-[100px] sm:mt-0"/>
-                <Image src={about1} alt="About image" style={{"width": '823px', height: 'auto'}} className="-mt-[140px] sm:mt-0" />
+                <div className="">
+                  <Image src={clock} alt="clock image" width={280} height={554} className="mr-0 sm:-mr-[60px] w-auto -mt-[100px] sm:mt-0"/>
+                </div>
+                <div className="relative  group transition-all duration-500">
+                  <Image src={about1} alt="About image" style={{"width": '823px', height: 'auto'}} className="-mt-[140px] sm:mt-0 z-20 relative" />
+                  <Image src={about2} alt="About image" style={{"width": '790px', height: 'auto'}} className="-mt-[140px] sm:mt-0 absolute  left-[20px] right-0 bottom-[20px] opacity-0 z-10  transition-all duration-500 group-hover:-left-[10px] md:group-hover:-left-[36px] group-hover:-bottom-[10px] md:group-hover:-bottom-[36px] group-hover:opacity-100"  />
+                </div>
               </div>
             </div>          
           </div>

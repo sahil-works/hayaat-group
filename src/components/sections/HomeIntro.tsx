@@ -1,5 +1,6 @@
 import Image from "next/image";
 import about from "../../../public/assets/images/home/about.png";
+import bg from "../../../public/assets/images/home/aboutbg.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Icon from "../../../public/assets/images/h.png";
 
@@ -17,8 +18,11 @@ export default function HomeIntro() {
           <Image src={Icon} alt="leafe" width={37} height={75} className="absolute top-[55%] left-[10px] xl:-left-[56px] hidden sm:block"/>
           <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">We are the Hayaat Group, a reputed, global principal investment firm creating and accelerating growth through talent, integrity and respect</p>
         </div>
-        <div className="image sm:max-w-[80%] xl:max-w-[65%] pl-0 sm:pl-[80px]">
-          <Image src={about} alt="about" style={{"width": '100%', height: 'auto'}}  />
+        <div className="image sm:max-w-[80%] xl:max-w-[65%] pl-0 sm:pl-[80px] ">
+          <div className="relative group mr-[10px] md:mr-[30px]">
+            <Image src={about} alt="about" style={{"width": '100%', height: 'auto'}}  className="relative z-20" />
+            <Image src={bg} alt="about bbg" style={{"width": '100%', height: 'auto'}} className="absolute  top-0 right-0  opacity-0 z-10  transition-all duration-500 group-hover:-right-[10px] md:group-hover:-right-[30px] group-hover:-top-[10px] md:group-hover:-top-[30px] group-hover:opacity-100" />
+          </div>
         </div>
       </div>
     </div>
