@@ -64,6 +64,33 @@ align-items: center;
 .custompl{
   padding-left: 0!important;
 }
+@keyframes lineGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.animate-lineGrow {
+  animation: lineGrow 8s ease forwards;
+}
+
+@keyframes lineX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-lineX {
+  animation: lineX 8s ease forwards;
+}
+
+
 
 @media (max-width:1200px) {
   .container{    

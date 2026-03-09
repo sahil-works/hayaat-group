@@ -8,10 +8,10 @@ import Icon from "../../../public/assets/images/h.png";
 export default function HomeIntro() {
   return (
     <>    
-    <div className="pt-[40px] sm:pt-[80px] xl:pt-[114px] relative overflow-hidden">
-      
+    <div className="pt-[40px] sm:pt-[80px] xl:pt-[114px] relative overflow-hidden">      
       <span className="w-full h-[380px] sm:h-[665px] bg-[#3F3B33] absolute top-0 left-0 right-0 -z-2"></span>
-      <div className="container relative border-l-[1.8px] border-[#A58F77] z-20">        
+      <div className="container relative  z-20 ">        
+        <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span>
         <div className="pb-[40px] sm:pb-[80px] xl:pb-[126px] max-w-[722px] flex items-start">          
           <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden sm:block" />          
           <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>

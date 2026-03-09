@@ -30,7 +30,8 @@ const images = [
 export default function FutureInFocus() {
   return (
     <div className="bg-[#3F3B33] ">
-      <div className="container border-t-[1.8px] border-[#A58F77] border-l-[1.8px] ">  
+      <div className="container  border-[#A58F77] border-l-[1.8px] relative">  
+        <span className="absolute left-0 top-0 h-[2px] w-full bg-[#A58F77] origin-left scale-x-0 animate-lineX"></span>
         <div className="pb-[120px] pl-[70px]">
         <h2 className="text-[#BFAF9D] text-[37px] sm:text-[42px] md:text-[60px] xl:text-[72px] leading-tight mb-[15px] sm:mb-[28px] mt-0 md:mt-[20px] xl:mt-0">
           The Future in Focus

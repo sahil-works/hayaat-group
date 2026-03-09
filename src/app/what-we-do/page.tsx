@@ -38,8 +38,10 @@ export default function NewsPage() {
        <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] relative bg-[#3F3B33]">                          
         <div className="container relative z-20">            
           <div className="text  flex items-start pb-[30px] md:pb-[50px] xl:pb-[90px]">
-            <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span>
+            <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span>
+            {/* <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span> */}
             <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block" />
+            <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
             <div className="pl-0 md:pl-[90px]">
               <p className="mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] ">
                 The Hayaat Group invests in high value opportunities across the real 

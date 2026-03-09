@@ -40,7 +40,7 @@ export default function SeedsOfSuccess() {
                 {stat.number}
               </p>
               <p className="text-[#3F3B33] font-light text-[16px] md:text-[25px] leading-snug sm:w-[300px]  sm:text-left">{stat.label}</p>
-              <span className="block h-[0.8px] sm:h-[1.83px] bg-[#A58F77] absolute left-0 right-0 bottom-[30px] sm:bottom-[47px] -z-20"></span>
+              <span className="block h-[0.8px] sm:h-[1.83px] bg-[#A58F77] absolute left-0 right-0 bottom-[30px] sm:bottom-[47px] -z-20 origin-left scale-x-0 animate-lineX"></span>
             </div>
           ))}
         </div>

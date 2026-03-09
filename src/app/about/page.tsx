@@ -66,10 +66,13 @@ export default function AboutPage() {
       {/* Intro body text */}
       <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] relative bg-[#BFAF9D]">            
         <span className=" bg-[#3F3B33] absolute top-0 left-0 right-0 bottom-[140px] "></span>              
+        <span className="w-full h-[380px] sm:h-[665px] bg-[#3F3B33] absolute top-0 left-0 right-0 -z-2"></span>
         <div className="container relative z-20">            
           <div className="text  flex items-start">
-            <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span>
+            {/* <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span> */}
+            <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span>
             <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block" />
+            <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
             <Image src={Icon} alt="leafe" width={37} height={75} className="hidden md:block absolute top-[50%] left-0 xl:-left-[56px]"/>
             <div>
               <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] md:pl-[90px]">The Hayaat Group is a family investment legacy, committed to building  enduring value across sectors and geographies. Founded by the  entrepreneurial Elahi family, the group is driven by discipline, a global outlook, and the flexibility of principal capital.</p>
