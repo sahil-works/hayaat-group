@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,6 +18,24 @@ const images = [
 ];
 
 export default function InvestmentsPage() {
+
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+    }, []);
+
   return (
     <main>      
       {/* Hero */}
@@ -34,8 +53,15 @@ export default function InvestmentsPage() {
       <div className="pt-[50px] md:pt-[80px] lg:pt-[114px] relative bg-[#3F3B33]">                          
         <div className="container relative z-20">            
           <div className="text  flex items-start pb-[50px] md:pb-[90px]">
-            <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span>
+            {/* <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span> */}
+            <div ref={ref} className="">
+              <span
+                className={`absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top hidden md:block
+                ${show ? "animate-lineGrow" : "scale-y-0"}`}
+              ></span>
+            </div>            
             <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block" />
+            <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
             <div>
               <p className="mb-[20px] md:mb-[45px] text-[18px] sm:text-[25px] lg:text-[31px]  text-[#BFAF9D] md:pl-[90px]">
                 At Hayaat Group, we deploy patient, principal capital across a 
