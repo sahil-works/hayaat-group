@@ -6,37 +6,67 @@ import clock from "../../../public/assets/images/home/clock.png";
 import about1 from "../../../public/assets/images/home/about2.png";
 import about2 from "../../../public/assets/images/home/about3.png";
 
-
 export default function AboutSection() {
   return (
     <>
-    <div className="relative ">
-      <div className="container border-[#A58F77] border-l-[1.8px]">
-        <div className="pb-[40px] sm:pb-[70px]">
-          <div  className="relative">            
-            <div className="pt-[30px] sm:pt-[60px] relative">
-              <div className="xl:flex justify-between max-w-[778px] pb-[120px] sm:ml-[35px]">
-                <p className="text-[#3F3B33] max-w-[513px] text-[16px] sm:text-[18px] leading-[2] Inter mb-[20px] xl:mb-0">We work with people who share our passion for success, and accelerate value creation through capital, capabilities, and experience.</p>
-                <Image src={arrowRight} alt="arrow right" width={200} height={200} className="w-auto"/>
-              </div>
-              <div className="absolute top-[100px] sm:top-0 xl:-top-[150px]  -right-[60px] xl:-right-[120px] -z-[99]">
-                <Image src={house} alt="House image" style={{"width": 'auto', height: 'auto'}}  />
-              </div>
-              <div className="sm:flex pl-0 md:pl-[40px] items-center pr-[10px] sm:pr-0">
-                <div className="">
-                  <Image src={clock} alt="clock image" width={280} height={554} className="mr-0 sm:-mr-[60px] w-auto -mt-[100px] sm:mt-0"/>
+      <div className="relative w-screen  left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <div className="container custompl border-[#A58F77] border-l-[1.8px]">
+          <div className="pb-[40px] sm:pb-[70px]">
+            <div className="">
+              <div className="pt-[30px] sm:pt-[60px] ">
+                <div className="xl:flex justify-between max-w-[778px] pb-[120px] sm:ml-[35px]">
+                  <p className="text-[#3F3B33] max-w-[513px] text-[16px] sm:text-[18px] leading-[2] Inter mb-[20px] xl:mb-0">
+                    We work with people who share our passion for success, and
+                    accelerate value creation through capital, capabilities, and
+                    experience.
+                  </p>
+                  <Image
+                    src={arrowRight}
+                    alt="arrow right"
+                    width={200}
+                    height={200}
+                    className="w-auto"
+                  />
                 </div>
-                <div className="relative  group transition-all duration-500">
-                  <Image src={about1} alt="About image" style={{"width": '823px', height: 'auto'}} className="-mt-[140px] sm:mt-0 z-20 relative" />
-                  <Image src={about2} alt="About image" style={{"width": '790px', height: 'auto'}} className="-mt-[140px] sm:mt-0 absolute  left-[20px] right-0 bottom-[20px] opacity-0 z-10  transition-all duration-500 group-hover:-left-[10px] md:group-hover:-left-[36px] group-hover:-bottom-[10px] md:group-hover:-bottom-[36px] group-hover:opacity-100"  />
+                <div className="absolute top-[100px] sm:top-0 xl:-top-[150px] right-0  md:-right-[60px] xl:-right-[0] -z-[99]">
+                  <Image
+                    src={house}
+                    alt="House image"
+                    style={{ width: "auto", height: "auto" }}
+                    className="min-w-full"
+                  />
+                </div>
+                <div className="sm:flex pl-0 md:pl-[40px] items-center pr-[10px] sm:pr-0">
+                  <div className="">
+                    <Image
+                      src={clock}
+                      alt="clock image"
+                      width={280}
+                      height={554}
+                      className="mr-0 sm:-mr-[60px] w-auto -mt-[100px] sm:mt-0"
+                    />
+                  </div>
+                  <div className="relative  group transition-all duration-500">
+                    <Image
+                      src={about1}
+                      alt="About image"
+                      style={{ width: "823px", height: "auto" }}
+                      className="-mt-[140px] sm:mt-0 z-20 relative"
+                    />
+                    <Image
+                      src={about2}
+                      alt="About image"
+                      style={{ width: "790px", height: "auto" }}
+                      className="-mt-[140px] sm:mt-0 absolute  left-[20px] right-0 bottom-[20px] opacity-0 z-10  transition-all duration-500 group-hover:-left-[10px] md:group-hover:-left-[36px] group-hover:-bottom-[10px] md:group-hover:-bottom-[36px] group-hover:opacity-100"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
+        <span className="w-full h-[260px] bg-[#3F3B33] absolute bottom-0 left-0 right-0 -z-[99]"></span>
       </div>
-      <span className="w-full h-[260px] bg-[#3F3B33] absolute bottom-0 left-0 right-0 -z-[99]"></span>
-    </div>
     </>
   );
 }

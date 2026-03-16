@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,6 +22,24 @@ const images = [
   "/assets/images/realEstate/slider/2.png",
 ];
 export default function NewsPage() {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+    }, []);
+
+
   return (
     <main>      
       {/* hero */}
@@ -38,8 +57,13 @@ export default function NewsPage() {
        <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] relative bg-[#3F3B33]">                          
         <div className="container relative z-20">            
           <div className="text  flex items-start pb-[30px] md:pb-[50px] xl:pb-[90px]">
-            <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span>
-            {/* <span className="hidden md:inline-block w-[1.8px] h-auto bg-[#A58F77] absolute top-[120px] bottom-0 left-0"> </span> */}
+            {/* <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span>*/}
+            <div ref={ref} className="">
+              <span
+                className={`absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top hidden md:block
+                ${show ? "animate-lineGrow" : "scale-y-0"}`}
+              ></span>
+            </div>
             <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block" />
             <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
             <div className="pl-0 md:pl-[90px]">
@@ -74,7 +98,7 @@ export default function NewsPage() {
       </div> 
       {/* Blog  */}
       <div className="bg-[#BFAF9D]">
-         <div className="container md:custompl border-l-[1.8px] border-[#A58F77]">
+         <div className="container custompl border-l-[1.8px] border-[#A58F77]">
           <div className="py-[30px] md:py-[90px] lg:py-[130px]">
             <div className="md:pl-[80px] border-b border-[#A58F77]">
               <div className="grid grid-cols-1 lg:grid-cols-[1fr,325px] gap-[20px] md:gap-[50px] md:pr-[68px] pb-[30px] md:pb-[65px]">

@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Navigation } from "swiper/modules";
@@ -6,19 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Cta from "../../../public/assets/images/cta.png";
-
-
-// import realEstateImg from "../../../public/assets/images/home/card/1.jpg";
-// import ventureImg from "../../../public/assets/images/home/card/2.jpg";
-// import growthImg from "../../../public/assets/images/home/card/3.jpg";
-
-// Card images
-// const realEstateImg = "https://www.figma.com/api/mcp/asset/d6c687a5-dd92-42bc-97c2-a3e009a31e58";
-// const ventureImg    = "https://www.figma.com/api/mcp/asset/0ed1a1ae-9a38-454c-aaf6-a1598dc522a1";
-// const growthImg     = "https://www.figma.com/api/mcp/asset/7212592c-5129-4a21-aafc-d0bb6e0ddc13";
-
-
-
 
 const images = [
   "/assets/images/home/card/1.jpg",
@@ -28,10 +16,33 @@ const images = [
 ];
 
 export default function FutureInFocus() {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-[#3F3B33] ">
       <div className="container  border-[#A58F77] border-l-[1.8px] relative">  
-        <span className="absolute left-0 top-0 h-[2px] w-full bg-[#A58F77] origin-left scale-x-0 animate-lineX"></span>
+        {/* <span className="absolute left-0 top-0 h-[2px] w-full bg-[#A58F77] origin-left scale-x-0 animate-lineX"></span> */}
+        <div ref={ref} className="">
+          <span
+            className={`absolute left-0 top-0 h-[2px] w-full bg-[#A58F77] origin-left hidden md:block
+            ${show ? "animate-lineX" : "scale-x-0"}`}
+          ></span>
+        </div>
         <div className="pb-[120px] pl-[70px]">
         <h2 className="text-[#BFAF9D] text-[37px] sm:text-[42px] md:text-[60px] xl:text-[72px] leading-tight mb-[15px] sm:mb-[28px] mt-0 md:mt-[20px] xl:mt-0">
           The Future in Focus

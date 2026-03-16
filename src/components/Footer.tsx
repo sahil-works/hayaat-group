@@ -13,7 +13,7 @@ const navLinks = ["Who are we", "What we do", "Investments", "News"];
 export default function Footer() {
   return (
     <footer className="bg-[#7E6952] text-white pb-[50px] lg:pb-[100px]">
-      <div className="container md:custompl  border-[#A58F77] border-l-[1.8px] ">
+      <div className="container custompl  border-[#A58F77] border-l-[1.8px] ">
         <div className="pt-[40px] sm:pt-[80px] lg:pt-[130px] pl-0 md:pl-[50px] sm:pb-[40px] lg:pb-[60px] lg:pl-[70px]">
           <div className=" grid grid-cols-1  sm:grid-cols-2 md:grid-cols-[.5fr,1fr] xl:grid-cols-2 gap-[30px] sm:gap-0  xl:gap-[50px]">
             <div className="item">
