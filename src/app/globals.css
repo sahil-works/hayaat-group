@@ -130,6 +130,74 @@ body {
   max-height: 540px;
 }
 
+@media (min-width: 1400px) {
+  .houseImage {
+    width: 340px !important;
+  }
+  .customrelative {
+    position: relative;
+  }
+  .clockImage {
+    min-height: 435px;
+    object-fit: contain;
+  }
+  .mapImage {
+    width: 95% !important;
+  }
+  .aboutGroup img {
+    width: 100% !important;
+  }
+  .pillarImage {
+    min-height: 1200px;
+  }
+  .pillarBlock {
+    margin-top: -2px;
+  }
+  .globeImage {
+    width: 600px !important;
+  }
+  .shipImage {
+    min-height: 800px !important;
+  }
+  .arrowRightImage {
+    width: 200px !important;
+    height: auto !important;
+  }
+  .container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .AboutImage img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 612px;
+    object-fit: cover;
+  }
+  .aboutDics {
+    max-width: 1000px !important;
+  }
+}
+@media (min-width: 1560px) {
+  .clockImage {
+    min-height: 510px;
+    object-fit: revert;
+  }
+  .houseImage {
+    width: 440px !important;
+  }
+}
+@media (min-width: 1650px) {
+  .aboutDics {
+    max-width: 1200px !important;
+  }
+  .houseImage {
+    width: 440px !important;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     max-width: 90%;

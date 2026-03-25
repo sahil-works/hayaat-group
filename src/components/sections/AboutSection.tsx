@@ -1,71 +1,21 @@
 // Leaf / plant icon from Figma
 import Image from "next/image";
-import arrowRight from "../../../public/assets/images/home/arrowRight.png";
-import house from "../../../public/assets/images/home/house.png";
-import clock from "../../../public/assets/images/home/clock.png";
-import about1 from "../../../public/assets/images/home/about2.png";
-import about2 from "../../../public/assets/images/home/about3.png";
+import Icon from "../../../public/assets/images/h.png";
 
 export default function AboutSection() {
   return (
     <>
-      <div className="relative w-screen  left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-        <div className="container custompl border-[#A58F77] border-l-[1.8px]">
-          <div className="pb-[40px] sm:pb-[70px]">
-            <div className="">
-              <div className="pt-[30px] sm:pt-[60px] ">
-                <div className="xl:flex justify-between max-w-[778px] pb-[120px] sm:ml-[35px]">
-                  <p className="text-[#3F3B33] max-w-[513px] text-[16px] sm:text-[18px] leading-[2] Inter mb-[20px] xl:mb-0">
-                    We work with people who share our passion for success, and
-                    accelerate value creation through capital, capabilities, and
-                    experience.
-                  </p>
-                  <Image
-                    src={arrowRight}
-                    alt="arrow right"
-                    width={200}
-                    height={200}
-                    className="w-auto"
-                  />
-                </div>
-                <div className="absolute top-[100px] sm:top-0 xl:-top-[150px] right-0  md:-right-[60px] xl:-right-[0] -z-[99]">
-                  <Image
-                    src={house}
-                    alt="House image"
-                    style={{ width: "auto", height: "auto" }}
-                    className="min-w-full"
-                  />
-                </div>
-                <div className="sm:flex pl-0 md:pl-[40px] items-center pr-[10px] sm:pr-0">
-                  <div className="">
-                    <Image
-                      src={clock}
-                      alt="clock image"
-                      width={280}
-                      height={554}
-                      className="mr-0 sm:-mr-[60px] w-auto -mt-[100px] sm:mt-0"
-                    />
-                  </div>
-                  <div className="relative  group transition-all duration-500">
-                    <Image
-                      src={about1}
-                      alt="About image"
-                      style={{ width: "823px", height: "auto" }}
-                      className="-mt-[140px] sm:mt-0 z-20 relative"
-                    />
-                    <Image
-                      src={about2}
-                      alt="About image"
-                      style={{ width: "790px", height: "auto" }}
-                      className="-mt-[140px] sm:mt-0 absolute  left-[20px] right-0 bottom-[20px] opacity-0 z-10  transition-all duration-500 group-hover:-left-[10px] md:group-hover:-left-[36px] group-hover:-bottom-[10px] md:group-hover:-bottom-[36px] group-hover:opacity-100"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="w-full relative h-[764px] bg-[url('/assets/images/about/Paralax.png')] bg-fixed bg-cover bg-center bg-no-repeat">
+        <div className="container custompl absolute inset-0 pointer-events-none z-10">
+          <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] hidden md:block"></span>
+          <Image
+            src={Icon}
+            alt="H logo"
+            width={37}
+            height={75}
+            className="absolute top-[2%] left-[10px] xl:-left-[56px] hidden sm:block"
+          />
         </div>
-        <span className="w-full h-[260px] bg-[#3F3B33] absolute bottom-0 left-0 right-0 -z-[99]"></span>
       </div>
     </>
   );
