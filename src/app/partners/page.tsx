@@ -40,7 +40,7 @@ export default function PartnersPage() {
             src={hero}
             alt="hero image"
             style={{ width: "100%", height: "810" }}
-            className="block h-[80vh] lg:h-auto"
+            className="block h-[70vh] lg:h-auto object-cover"
           />
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end justify-start bg-black/80">
@@ -55,7 +55,7 @@ export default function PartnersPage() {
       {/* About */}
       <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] relative bg-[#3F3B33]">
         <div className="container relative z-20 ">
-          <div className="text  flex items-start pb-[100px]">
+          <div className="text  flex items-start pb-[50px] md:pb-[100px]">
             <div ref={ref} className="">
               <span
                 className={`absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top hidden md:block
@@ -66,9 +66,9 @@ export default function PartnersPage() {
               alt="leafe"
               width={73}
               height={113}
-              className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block"
+              className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block "
             />
-            <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
+            <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden md:block"></span>
 
             <div className="max-w-[980px]">
               <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] md:pl-[90px]">
@@ -91,7 +91,7 @@ export default function PartnersPage() {
       {/* Slider */}
       <div className="bg-[#BFAF9D] relative">
         <div className="container  custompl border-l-[1.8px] border-[#A58F77]">
-          <div className="py-[100px] teamslider pl-[90px]">
+          <div className="py-[100px] teamslider md:pl-[90px]">
             <Swiper
               modules={[Navigation]}
               loop={true}
@@ -104,7 +104,7 @@ export default function PartnersPage() {
               className="w-full">
               <SwiperSlide>
                 <div className="">
-                  <div className="grid grid-cols-2 items-center min-h-[650px]">
+                  <div className="grid grid-cols-2 items-center lg:min-h-[650px]">
                     <div className="text max-w-[517px]">
                       <h2 className="Inter text-[#A58F77] text-[96px] leading-1">
                         01
@@ -172,65 +172,65 @@ export default function PartnersPage() {
       {/* new */}
       <div className="bg-[#3F3B33]">
         <div className="container  custompl border-l-[1.8px] border-[#A58F77]">
-          <div className="pt-[90px] pb-[140px] pl-[90px]">
-            <div className="grid grid-cols-3">
+          <div className="pt-[40px] md:pt-[90px] pb-[80px] md:pb-[140px] md:pl-[90px]">
+            <div className="grid grid-cols-1 md:grid-cols-3">
               {/* 1 */}
-              <div className="item border border-r-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
+              <div className="item border md:border-r-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
                 <Image
                   src={new1}
                   alt="image"
                   style={{ width: "100%", height: "auto" }}
                   className="max-h-[200px] block w-full object-cover"
                 />
-                <h3 className="text-white text-[18px] Inter pt-[30px] pb-[40px] pl-[20px]">
+                <h3 className="text-white text-[18px] Inter pt-[10px] lg:pt-[30px] pb-[20px] lg:pb-[40px] pl-[10px] lg:pl-[20px]">
                   <Link href="">IncentiaPay</Link>
                 </h3>
               </div>
               {/* 2 */}
-              <div className="item border border-r-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
+              <div className="item border md:border-r-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
                 <Image
                   src={new1}
                   alt="image"
                   style={{ width: "100%", height: "auto" }}
                   className="max-h-[200px] block w-full object-cover"
                 />
-                <h3 className="text-white text-[18px] Inter pt-[30px] pb-[40px] pl-[20px]">
+                <h3 className="text-white text-[18px] Inter pt-[10px] lg:pt-[30px] pb-[20px] lg:pb-[40px] pl-[10px] lg:pl-[20px]">
                   <Link href="">IncentiaPay</Link>
                 </h3>
               </div>
               {/* 3 */}
-              <div className="item border border-b-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
+              <div className="item border md:border-b-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
                 <Image
                   src={new1}
                   alt="image"
                   style={{ width: "100%", height: "auto" }}
                   className="max-h-[200px] block w-full object-cover"
                 />
-                <h3 className="text-white text-[18px] Inter pt-[30px] pb-[40px] pl-[20px]">
+                <h3 className="text-white text-[18px] Inter pt-[10px] lg:pt-[30px] pb-[20px] lg:pb-[40px] pl-[10px] lg:pl-[20px]">
                   <Link href="">IncentiaPay</Link>
                 </h3>
               </div>
               {/* 4 */}
-              <div className="item border border-t-0 border-r-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
+              <div className="item border border-t-0 md:border-r-0 border-[#A58F77] p-[10px] bg-[#3e3e3e]">
                 <Image
                   src={new1}
                   alt="image"
                   style={{ width: "100%", height: "auto" }}
                   className="max-h-[200px] block w-full object-cover"
                 />
-                <h3 className="text-white text-[18px] Inter pt-[30px] pb-[40px] pl-[20px]">
+                <h3 className="text-white text-[18px] Inter pt-[10px] lg:pt-[30px] pb-[20px] lg:pb-[40px] pl-[10px] lg:pl-[20px]">
                   <Link href="">IncentiaPay</Link>
                 </h3>
               </div>
               {/* 5 */}
-              <div className="item border border-r-0 border-t-0  border-[#A58F77] p-[10px] bg-[#3e3e3e]">
+              <div className="item border md:border-r-0 border-t-0  border-[#A58F77] p-[10px] bg-[#3e3e3e]">
                 <Image
                   src={new1}
                   alt="image"
                   style={{ width: "100%", height: "auto" }}
                   className="max-h-[200px] block w-full object-cover"
                 />
-                <h3 className="text-white text-[18px] Inter pt-[30px] pb-[40px] pl-[20px]">
+                <h3 className="text-white text-[18px] Inter pt-[10px] lg:pt-[30px] pb-[20px] lg:pb-[40px] pl-[10px] lg:pl-[20px]">
                   <Link href="">IncentiaPay</Link>
                 </h3>
               </div>
@@ -242,7 +242,7 @@ export default function PartnersPage() {
                   style={{ width: "100%", height: "auto" }}
                   className="max-h-[200px] block w-full object-cover"
                 />
-                <h3 className="text-white text-[18px] Inter pt-[30px] pb-[40px] pl-[20px]">
+                <h3 className="text-white text-[18px] Inter pt-[10px] lg:pt-[30px] pb-[20px] lg:pb-[40px] pl-[10px] lg:pl-[20px]">
                   <Link href="">IncentiaPay</Link>
                 </h3>
               </div>
@@ -250,7 +250,7 @@ export default function PartnersPage() {
             <div className="text-center ">
               <Link
                 href="/about"
-                className="relative inline-block  text-[#bfaf9d] font-light text-[18px] md:text-[24px] transition-colors mt-[104px] tracking-wide">
+                className="relative inline-block  text-[#bfaf9d] font-light text-[18px] md:text-[24px] transition-colors mt-[50px] md:mt-[104px] tracking-wide">
                 <Image
                   src={cta}
                   alt="Cta"
@@ -259,7 +259,7 @@ export default function PartnersPage() {
                   className=" z-20"
                 />
 
-                <span className=" absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-30 text-[#000]">
+                <span className="text-[24px] absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-30 text-[#000]">
                   Read More
                 </span>
               </Link>
