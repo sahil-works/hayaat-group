@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function HomeHero() {
   return (
     <>
-      <div className="relative">
+      <div className="relative h-[480px] md:h-[600px] lg:h-auto">
         <div className="image">
           {/* <Image src={heroBg} alt="hero image" style={{"width": '100%', height: 'auto'}} className="block" /> */}
           <video
@@ -23,7 +23,7 @@ export default function HomeHero() {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center bg-black/50">
           <div className="container mx-auto ">
-            <h1 className="pt-[100px] ml-[20px] xl:ml-[100px] block text-[50px] sm:text-[60px] md:text-[75px] xl:text-[90px] leading-[1.2] text-white max-w-[600px] lg:max-w-[700px]">
+            <h1 className="font-normal md:pt-[100px] sm:ml-[20px] xl:ml-[100px] block text-[38px] sm:text-[60px] md:text-[75px] xl:text-[90px] leading-[1.2] text-white max-w-[368px] sm:max-w-[600px] lg:max-w-[700px]">
               Where
               <br /> financial growth comes to life.
             </h1>
