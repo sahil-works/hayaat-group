@@ -24,7 +24,7 @@ export default function Footer() {
                       alt="Logo image"
                       width={132}
                       height={130}
-                      className=""
+                      className="h-20 sm:h-[130px] w-20 sm:w-[132px]"
                     />
                   </Link>
                   <ul className="mt-[30px] md:mt-[60px] flex items-center">

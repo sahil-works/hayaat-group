@@ -5,10 +5,10 @@ import Cta from "../../../public/assets/images/cta1.png";
 import map from "../../../public/assets/images/map.png";
 
 const stats = [
-  { number: "90+", label: "Years of Family Business" },
+  { number: "20+", label: "Years of track record" },
   { number: "120+", label: "Investments Made" },
-  { number: "100+", label: "Elite Partnerships" },
-  { number: "20+", label: "Countries Reached" },
+  { number: "$8B+", label: "Project Value" },
+  { number: "20+", label: "Countries" },
 ];
 
 export default function SeedsOfSuccess() {
@@ -32,7 +32,8 @@ export default function SeedsOfSuccess() {
   return (
     <section
       className="bg-cover xl:bg-contain bg-no-repeat bg-center"
-      style={{ backgroundImage: "url('/assets/images/bg.png')" }}>
+      style={{ backgroundImage: "url('/assets/images/bg.png')" }}
+    >
       <div className="container  custompl border-l-[1.8px] border-[#A58F77]">
         {/* Heading */}
         <div className="pt-[40px] sm:pt-[80px] xl:pt-[130px] md:pl-[60px]">
@@ -56,12 +57,12 @@ export default function SeedsOfSuccess() {
 
         {/* World map placeholder */}
         <div className="-mt-[10px] mb-[45px]">
-          <Image
+          {/* <Image
             src={map}
             alt="map"
             style={{ width: "auto", height: "auto" }}
             className="mx-auto mapImage"
-          />
+          /> */}
         </div>
 
         {/* Stats */}
@@ -69,7 +70,8 @@ export default function SeedsOfSuccess() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="item pt-5 mb-[25px] sm:mb-[46px] flex justify-between items-start relative">
+              className="item pt-5 mb-[25px] sm:mb-[46px] flex justify-between items-start relative"
+            >
               <p className="font-antic text-[#3d3830] text-[30px] sm:text-[55px] md:text-[65px] xl:text-[83px] inline-block py-[10px] px-[20px] sm:px-[30px] bg-white/90 leading-none ml-[5px] sm:ml-[40px] md:ml-[85px] mb-2">
                 {stat.number}
               </p>
@@ -80,7 +82,8 @@ export default function SeedsOfSuccess() {
               <div ref={ref} className="">
                 <span
                   className={`block h-[0.8px] sm:h-[1px] bg-[#A58F77] absolute left-0 right-0 bottom-[30px] sm:bottom-[47px] -z-20 origin-left
-                  ${show ? "animate-lineX" : "scale-x-0"}`}></span>
+                  ${show ? "animate-lineX" : "scale-x-0"}`}
+                ></span>
               </div>
             </div>
           ))}

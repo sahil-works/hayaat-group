@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import about from "../../../public/assets/images/home/about.png";
-import bg from "../../../public/assets/images/home/aboutbg.png";
+// import about from "../../../public/assets/images/home/about.png";
+// import bg from "../../../public/assets/images/home/aboutbg.png";
 import leafe from "../../../public/assets/images/leafe.png";
-import Icon from "../../../public/assets/images/h.png";
+// import Icon from "../../../public/assets/images/h.png";
 
 export default function HomeIntro() {
   const ref = useRef(null);
@@ -53,7 +53,7 @@ export default function HomeIntro() {
                 and respect
               </p>
 
-              <p className="mt-[70px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">
+              <p className="mt-[32px] sm:mt-[48px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">
                 We work with people who share our passion for success, and
                 accelerate value creation through capital, capabilities, and
                 experience.

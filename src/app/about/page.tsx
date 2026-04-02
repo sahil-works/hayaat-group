@@ -112,17 +112,17 @@ export default function AboutPage() {
               alt="leafe"
               width={37}
               height={75}
-              className="hidden md:block absolute top-[50%] left-0 xl:-left-[56px]"
+              className="hidden md:block absolute top-[50%] left-0 xl:-left-[56px] md:ml-5 xl:ml-0"
             />
             <div>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] md:pl-[90px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 The Hayaat Group is a family investment legacy, committed to
                 building enduring value across sectors and geographies. Founded
                 by the entrepreneurial Elahi family, the group is driven by
                 discipline, a global outlook, and the flexibility of principal
                 capital.
               </p>
-              <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] md:pl-[90px] mr-[15px]">
+              <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px] mr-[15px]">
                 We began with the UK real estate market, expanding into new
                 markets, and further growing globally with venture capital and
                 growth equity. Ever evolving, yet anchored in our values of
@@ -149,7 +149,7 @@ export default function AboutPage() {
         <div className="container  custompl border-l-[1.8px] border-[#A58F77]">
           <div className="grid grid-cols-1 md:grid-cols-[1fr,332px] items-center ">
             <div className="">
-              <h2 className="md:pl-[124px] font-antic text-[rgb(63,59,51)] text-[40px] md:text-[53px] lg:text-[72px] mb-[20px] md:mb-[35px]">
+              <h2 className="md:pl-[124px] font-antic text-[rgb(63,59,51)] text-[36px] md:text-[40px] lg:text-[64px] xl:text-[72px] mb-[20px] md:mb-[35px] sm:mt-7 lg:mt-0">
                 The Hayaat DNA
               </h2>
               {dnaItems.map((item) => (
@@ -159,7 +159,7 @@ export default function AboutPage() {
                   <h3 className="font-antic text-white text-[26px] md:text-[36px] mb-[10px] md:mb-[22px] pt-[15px] md:pt-[30px]">
                     {item.title}
                   </h3>
-                  <p className="text-[#6b6355] font-light text-[16px] md:text-[19px] leading-relaxed max-w-[490px]">
+                  <p className="text-[#3F3B33] font-light text-[16px] md:text-[19px] leading-relaxed max-w-[490px]">
                     {item.text}
                   </p>
                 </div>
@@ -202,7 +202,7 @@ export default function AboutPage() {
               <h2 className="font-antic text-[40px] md:text-[53px] lg:text-[72px] mb-[10px] md:mb-[25px]">
                 Capital Growth
               </h2>
-              <p className="text-[#bfaf9d] font-light text-[16px] md:text-[18.5px] leading-[2] max-w-[910px]">
+              <p className="text-[#3F3B33] font-light text-[16px] md:text-[18.5px] leading-[2] max-w-[910px]">
                 Making a significant impact in the UK and UAE real estate
                 markets, the Elahi family expanded its footprint from urban
                 regeneration projects and residential communities to
@@ -226,7 +226,7 @@ export default function AboutPage() {
           alt="leafe"
           width={37}
           height={75}
-          className="absolute top-[50px] left-[50px] z-20 hidden md:block"
+          className="absolute top-[50px] left-[50px] xl:left-[176px] z-20 hidden md:block"
         />
         <div className="container border-l-[1.8px] border-[#A58F77]">
           <div className="pb-[80px] lg:pb-[150px] xl:pb-[200px] pt-[67px]">
@@ -329,7 +329,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="max-w-[326px] mx-auto text-center">
-              <h2 className="text-[28px] mb-[10px] leading-[1] text-[#BFAF9D]">
+              <h2 className="text-[24px] sm:text-[28px] mb-[10px] leading-[1] text-[#BFAF9D]">
                 Mohammed Ikhlaq
               </h2>
               <p className="text-white Inter text-[18px]">
@@ -353,7 +353,7 @@ export default function AboutPage() {
       {/* We've Come A Long Way — Timeline */}
       <div className="container border-l-[1.83px] border-[#A58F77]  overflow-x-hidden">
         <div className="pt-[35px] md:pt-[80px] lg:pt-[127px] pb-[50px] md:pb-[88px]">
-          <h2 className="text-[35px] md:text-[50px] lg:text-[60px]  text-center">
+          <h2 className="text-[35px] md:text-[50px] lg:text-[60px] xl:text-[72px]  text-center mb-8 md:mb-0">
             We’ve Come A Long Way
           </h2>
           <div className="relative">
@@ -394,7 +394,7 @@ export default function AboutPage() {
                   }}>
                   <SwiperSlide>
                     <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[72px] text-white mb-[20px]">1925</h2>
+                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">1925</h2>
                       <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
                         The first generation Elahi family enters the business
                         world managing contracts for the British Army
@@ -412,7 +412,7 @@ export default function AboutPage() {
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[72px] text-white mb-[20px]">2000</h2>
+                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">2000</h2>
                       <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
                         Hayaat Group is founded
                       </p>
@@ -429,7 +429,7 @@ export default function AboutPage() {
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[72px] text-white mb-[20px]">2002</h2>
+                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">2002</h2>
                       <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
                         The group embarks on real estate development and urban
                         regeneration in the Northwest of England
@@ -447,7 +447,7 @@ export default function AboutPage() {
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[72px] text-white mb-[20px]">1925</h2>
+                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">1925</h2>
                       <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
                         The first generation Elahi family enters the business
                         world managing contracts for the British Army
@@ -465,7 +465,7 @@ export default function AboutPage() {
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[72px] text-white mb-[20px]">2000</h2>
+                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">2000</h2>
                       <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
                         Hayaat Group is founded
                       </p>
@@ -482,7 +482,7 @@ export default function AboutPage() {
                   </SwiperSlide>
                   <SwiperSlide>
                     <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[72px] text-white mb-[20px]">2002</h2>
+                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">2002</h2>
                       <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
                         The group embarks on real estate development and urban
                         regeneration in the Northwest of England
@@ -577,11 +577,11 @@ export default function AboutPage() {
                       src={breeam}
                       alt="hero image"
                       style={{ width: "284", height: "174" }}
-                      className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0 "
+                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0 "
                     />
                   </div>
                   <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[36px] text-[#BFAF9D] uppercase">
+                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] uppercase">
                       BREEAM
                     </h2>
                     <p className="text-white text-[14px] md:text-[16px] Inter leading-[1.2]">
@@ -609,11 +609,11 @@ export default function AboutPage() {
                       src={international}
                       alt="hero image"
                       style={{ width: "284", height: "174" }}
-                      className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0 "
+                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0 "
                     />
                   </div>
                   <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[36px] text-[#BFAF9D]  leading-[1]">
+                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D]  leading-[1]">
                       International Green Apple Awards
                     </h2>
                   </div>
@@ -638,11 +638,11 @@ export default function AboutPage() {
                       src={international}
                       alt="hero image"
                       style={{ width: "284", height: "174" }}
-                      className="w-[150px] sm:w-[284px] h-auto mb-[10px] md:mb-0"
+                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0"
                     />
                   </div>
                   <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[36px] text-[#BFAF9D] leading-[1]">
+                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1]">
                       Building Awards
                     </h2>
                   </div>
