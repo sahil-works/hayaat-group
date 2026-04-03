@@ -2,7 +2,7 @@
 // Leaf / plant icon from Figma
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Icon from "../../../public/assets/images/h.png";
+import Icon from "../../../public/assets/images/h-fill.png";
 
 export default function AboutSection() {
   const ref = useRef(null);
@@ -26,7 +26,10 @@ export default function AboutSection() {
   return (
     <>
       <div className="w-full relative h-[490px] sm:h-[590px] lg:h-[764px] bg-[url('/assets/images/about/Paralax.png')] bg-fixed bg-cover bg-center bg-no-repeat">
-        <div ref={ref} className="container custompl absolute inset-0 pointer-events-none z-10">
+        <div
+          ref={ref}
+          className="container custompl absolute inset-0 pointer-events-none z-10"
+        >
           <span
             className={`absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top hidden md:block
             ${show ? "animate-lineGrow" : "scale-y-0"}`}
