@@ -224,7 +224,7 @@ export default function FutureInFocus() {
           </div>
 
           {/* Cards — pulled left to sit flush against the border line */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 xl:gap-0 pb-[80px] xl:pb-[145px] xl:-ml-[80px]  xl:-mr-[100px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 xl:gap-0 pb-[80px] xl:pb-[145px] xl:ml-[20px]  xl:-mr-[100px]">
             {cards.map((card, i) =>
               card.image ? (
                 <div
