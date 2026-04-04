@@ -208,10 +208,10 @@ export default function FutureInFocus() {
       <div className="bg-[#BFAF9D]">
         <div className="container  border-[#A58F77] border-l-[1.8px] relative">
           <div className="sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[80px] pb-[79px]">
-            <p className="font-normal text-4xl text-[#3F3B33]">
+            {/* <p className="font-normal text-3xl sm:text-4xl text-[#3F3B33]">
               Strategic framework
-            </p>
-            <h2 className="mt-2 font-normal text-[73px] text-[#3F3B33]">
+            </p> */}
+            <h2 className="mt-2 font-normal text-[38px] md:text-[48px] lg:text-[73px] text-[#3F3B33]">
               Our Four Investment Verticals
             </h2>
 
@@ -224,7 +224,7 @@ export default function FutureInFocus() {
           </div>
 
           {/* Cards — pulled left to sit flush against the border line */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-0 pb-[80px] xl:pb-[145px] xl:-ml-[80px]  xl:-mr-[100px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 xl:gap-0 pb-[80px] xl:pb-[145px] xl:-ml-[80px]  xl:-mr-[100px]">
             {cards.map((card, i) =>
               card.image ? (
                 <div

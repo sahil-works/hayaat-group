@@ -1,17 +1,52 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Cta from "../../../public/assets/images/cta.png";
-const images = [
-  "/assets/images/home/slider/1.jpg",
-  "/assets/images/home/slider/2.jpg",
-  "/assets/images/home/slider/3.jpg",
-  "/assets/images/home/slider/1.jpg",
+
+const slides = [
+  {
+    src: "/assets/images/home/slider/isolana.jpg",
+    title: "Hayaat Developments",
+    description: "Boutique high-end developer delivering\npremium residences in the UAE",
+  },
+  {
+    src: "/assets/images/home/slider/Packaging.jpg",
+    title: "Packaging Platform",
+    description: "Agile packaging solutions\nfor growing UK businesses",
+  },
+  {
+    src: "/assets/images/home/slider/pojanco.jpg",
+    title: " Oil & Gas Advisory",
+    description: "Boutique O&G advisory for global, blue-chip\nsuppliers in the GCC region",
+  },
+  {
+    src: "/assets/images/home/slider/ZaynVC.png",
+    title: "Zayn VC",
+    description: "Largest VC fund powering bold founders and\nstartups in Pakistan",
+  },
+  {
+    src: "/assets/images/home/slider/vetclinic.jpg",
+    title: " Vet Clinics Platform",
+    description: "Building the future of\nveterinary excellence in the UAE",
+  },
+  {
+    src: "/assets/images/home/slider/Loyyal.jpg",
+    title: "Loyyal",
+    description: "Blockchain as a\nloyalty service platform",
+  },
+  {
+    src: "/assets/images/home/slider/Greens.jpg",
+    title: " Greens Student Village",
+    description: "Highest rated sustainable\nstudent residence complex in the UK",
+  },
 ];
 export default function LatestInvestments() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = slides[activeIndex % slides.length];
+
   return (
     <>
       <div className="bg-[#3F3B33]">
@@ -29,12 +64,15 @@ export default function LatestInvestments() {
                   slidesPerView={3}
                   spaceBetween={30}
                   autoplay={{ delay: 3000 }}
+                  onSlideChange={(swiper) => {
+                    const centerIndex = (swiper.realIndex + 1) % slides.length;
+                    setActiveIndex(centerIndex);
+                  }}
                   breakpoints={{
                     0: {
                       slidesPerView: 1,
                       spaceBetween: 1,
                     },
-
                     768: {
                       slidesPerView: 2,
                       spaceBetween: 25,
@@ -45,11 +83,11 @@ export default function LatestInvestments() {
                     },
                   }}
                 >
-                  {images.map((src, index) => (
+                  {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
                       <Image
-                        src={src}
-                        alt={`Slide ${index}`}
+                        src={slide.src}
+                        alt={slide.title}
                         width={400}
                         height={545}
                         className="w-full h-auto object-cover"
@@ -118,26 +156,14 @@ export default function LatestInvestments() {
               </div>
             </div>
             <div className="max-w-[200px] mx-auto">
-              <h4 className="text-[10px] Inter text-white uppercase mb-[10px]">
-                driect investment
-              </h4>
               <h2 className="text-[26px] mb-[10px] leading-[1] text-[#BFAF9D]">
-                The Entertainer
+                {active.title}
               </h2>
               <p className="text-white Inter">
-                A leading provide <br />
-                of app-based incentives
+                {active.description.split("\n").map((line, i) => (
+                  <span key={i}>{line}{i === 0 && <br />}</span>
+                ))}
               </p>
-              <button className="mt-[20px] relative inline-block  text-[#bfaf9d] font-light text-[14px] px-8 py-3  transition-colors  tracking-wide">
-                <Image
-                  src={Cta}
-                  alt="Cta"
-                  width={205}
-                  height={63}
-                  className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center "
-                />
-                Read More
-              </button>
             </div>
           </div>
         </div>
