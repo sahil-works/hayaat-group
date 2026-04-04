@@ -8,9 +8,10 @@ import "swiper/css/navigation";
 
 const slides = [
   {
-    src: "/assets/images/home/slider/isolana.jpg",
+    src: "/assets/images/home/slider/Isolana3x4.jpg",
     title: "Hayaat Developments",
-    description: "Boutique high-end developer delivering\npremium residences in the UAE",
+    description:
+      "Boutique high-end developer delivering\npremium residences in the UAE",
   },
   {
     src: "/assets/images/home/slider/Packaging.jpg",
@@ -20,12 +21,14 @@ const slides = [
   {
     src: "/assets/images/home/slider/pojanco.jpg",
     title: " Oil & Gas Advisory",
-    description: "Boutique O&G advisory for global, blue-chip\nsuppliers in the GCC region",
+    description:
+      "Boutique O&G advisory for global, blue-chip\nsuppliers in the GCC region",
   },
   {
-    src: "/assets/images/home/slider/ZaynVC.png",
+    src: "/assets/images/home/slider/ZaynVC3x4.jpg",
     title: "Zayn VC",
-    description: "Largest VC fund powering bold founders and\nstartups in Pakistan",
+    description:
+      "Largest VC fund powering bold founders and\nstartups in Pakistan",
   },
   {
     src: "/assets/images/home/slider/vetclinic.jpg",
@@ -38,9 +41,10 @@ const slides = [
     description: "Blockchain as a\nloyalty service platform",
   },
   {
-    src: "/assets/images/home/slider/Greens.jpg",
+    src: "/assets/images/home/slider/Greens3x4.jpg",
     title: " Greens Student Village",
-    description: "Highest rated sustainable\nstudent residence complex in the UK",
+    description:
+      "Highest rated sustainable\nstudent residence complex in the UK",
   },
 ];
 export default function LatestInvestments() {
@@ -161,7 +165,10 @@ export default function LatestInvestments() {
               </h2>
               <p className="text-white Inter">
                 {active.description.split("\n").map((line, i) => (
-                  <span key={i}>{line}{i === 0 && <br />}</span>
+                  <span key={i}>
+                    {line}
+                    {i === 0 && <br />}
+                  </span>
                 ))}
               </p>
             </div>
