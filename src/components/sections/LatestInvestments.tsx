@@ -100,7 +100,7 @@ export default function LatestInvestments() {
                   ))}
                 </Swiper>
               </div>
-              <div className="mt-[20px] -mb-[30px] max-w-[370px] flex justify-between items-center mx-auto">
+              <div className="mt-[20px] -mb-[30px] max-w-[450px] flex justify-between items-center mx-auto">
                 <div className="custom-prev  cursor-pointer">
                   <svg
                     width="35"
@@ -159,7 +159,7 @@ export default function LatestInvestments() {
                 </div>
               </div>
             </div>
-            <div className="max-w-[200px] mx-auto">
+            <div className="max-w-[350px] mx-auto">
               <h2 className="text-[26px] mb-[10px] leading-[1] text-[#BFAF9D]">
                 {active.title}
               </h2>
