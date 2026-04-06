@@ -78,29 +78,33 @@ export default function Footer() {
                 <ul>
                   <li className="mb-[3px]">
                     <Link
-                      href="/about"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      href="/"
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       Who are we
                     </Link>
                   </li>
                   <li className="mb-[3px]">
                     <Link
-                      href="/what-we-do"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      href="/"
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       What we do
                     </Link>
                   </li>
                   <li className="mb-[3px]">
                     <Link
-                      href="/investments"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      href="/"
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       Investments
                     </Link>
                   </li>
                   <li className="mb-[3px]">
                     <Link
-                      href="news"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      href="/"
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       News
                     </Link>
                   </li>
@@ -122,21 +126,24 @@ export default function Footer() {
                   <li className="mb-[5px]">
                     <Link
                       href="tel:+971 4 513 4951"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       Tel: +971 4 513 4951
                     </Link>
                   </li>
                   <li className="mb-[5px]">
                     <Link
                       href="tel:+971 4 513 4936"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       Fax: +971 4 513 4936
                     </Link>
                   </li>
                   <li className="mb-[5px]">
                     <Link
                       href="mailto:info@hayaatgroup.com"
-                      className="text-white text-[16px] mb-[7px] Inter font-light">
+                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                    >
                       E-mail: info@hayaatgroup.com
                     </Link>
                   </li>
