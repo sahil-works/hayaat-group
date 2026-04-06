@@ -22,7 +22,9 @@ export default function HeroBanner() {
       {/* Hero Text */}
       <div className="absolute bottom-[22%] left-[17.5%]">
         <h1 className="font-antic-didone text-white leading-tight">
-          <span className="block text-[72px] md:text-[80px]">Global Investment</span>
+          <span className="block text-[72px] md:text-[80px]">
+            Global Investment
+          </span>
           <span className="block text-[72px] md:text-[80px]">Partnerships</span>
         </h1>
       </div>

@@ -44,9 +44,9 @@ export default function SeedsOfSuccess() {
           <h2 className="text-[38px] sm:text-[50px] md:text-[65px] xl:text-[72px] mb-[5px] xl:mb-[15px] leading-[1.2] text-[#3F3B33]">
             Track Record{" "}
           </h2>
-          <p className="text-[#3F3B33] text-[18px] sm:text-[28px] xl:text-[35px] mb-[20px] sm:mb-[36px]">
+          {/* <p className="text-[#3F3B33] text-[18px] sm:text-[28px] xl:text-[35px] mb-[20px] sm:mb-[36px]">
             Countries where the Group has interests
-          </p>
+          </p> */}
           {/* <button className="relative inline-block  text-[#bfaf9d] font-light text-[20px] sm:text-[24px] px-8 py-3 ">
             <Image
               src={Cta}
