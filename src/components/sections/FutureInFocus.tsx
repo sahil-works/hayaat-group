@@ -85,7 +85,7 @@ export default function FutureInFocus() {
               vision for the future.
             </p>
 
-            <Link
+            {/* <Link
               href="/about"
               className="relative inline-block  text-[#bfaf9d] font-light text-[18px] md:text-[24px] px-8 py-3 transition-colors mb-8 sm:mb-14 tracking-wide"
             >
@@ -98,7 +98,7 @@ export default function FutureInFocus() {
               />
               Read More
               <span className="inline-block"></span>
-            </Link>
+            </Link> */}
 
             {/* Cards */}
             {/* <div className="relative">
