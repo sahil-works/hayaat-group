@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+// import about from "../../../public/assets/images/home/about.png";
+// import bg from "../../../public/assets/images/home/aboutbg.png";
 import leafe from "../../../public/assets/images/leafe.png";
 // import Icon from "../../../public/assets/images/h.png";
 
