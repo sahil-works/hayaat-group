@@ -27,7 +27,7 @@ const cards: Card[] = [
       "This signals our core capability as a high-impact developer of institutional and trophy assets. Our mandate covers the full lifecycle of development, from Mixed-Use Waterfront Projects like Isolana and specialized institutional niches such as award winning UK Student Housing, to the development of Signature Ultra-Prime Mansions ($50M–$100M+), including landmark estates in prestigious enclaves such as Al Barari, Dubai.",
   },
   {
-    image: "/assets/images/home/card/basket.jpeg",
+    image: "/assets/images/home/card/bru-no-pneumatics.jpeg",
     title: "Strategic\nFund Investments",
     subtitle: "PARTNERING WITH LEADING\nPRIVATE MARKET MANAGERS",
     description:
