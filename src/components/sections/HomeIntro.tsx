@@ -50,7 +50,7 @@ export default function HomeIntro() {
               <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">
                 We are the Hayaat Group, a reputed, global principal investment
                 firm creating and accelerating growth through talent, integrity
-                and respect
+                and respect.
               </p>
 
               <p className="mt-[32px] sm:mt-[48px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">

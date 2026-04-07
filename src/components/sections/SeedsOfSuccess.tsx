@@ -42,7 +42,7 @@ export default function SeedsOfSuccess() {
         {/* Heading */}
         <div className="pt-[40px] sm:pt-[80px] xl:pt-[130px] md:pl-[60px]">
           <h2 className="text-[38px] sm:text-[50px] md:text-[65px] xl:text-[72px] mb-[5px] xl:mb-[15px] leading-[1.2] text-[#3F3B33]">
-            Track Record{" "}
+            Seeds of Success{" "}
           </h2>
           {/* <p className="text-[#3F3B33] text-[18px] sm:text-[28px] xl:text-[35px] mb-[20px] sm:mb-[36px]">
             Countries where the Group has interests
