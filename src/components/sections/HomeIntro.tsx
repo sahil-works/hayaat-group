@@ -60,6 +60,7 @@ export default function HomeIntro() {
               </p>
             </div>
           </div>
+
           {/* <div className="image sm:max-w-[80%] xl:max-w-[65%] pl-0 sm:pl-[35px] ">
             <div className="relative group mr-[10px] md:mr-[30px]">
               <Image
