@@ -7,11 +7,19 @@ import Logo from "../../public/assets/images/logo.png";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Who are we", href: "/about" },
-  { label: "What we do", href: "/what-we-do" },
-  { label: "Investments", href: "/investments" },
-  { label: "News", href: "/news" },
+  // { label: "Home", href: "/", disabled: false },
+  // { label: "Who are we", href: "/about", disabled: false },
+  // { label: "What we do", href: "/what-we-do", disabled: false },
+  // { label: "Investments", href: "/investments", disabled: false },
+  // { label: "News", href: "/news", disabled: false },
+  {
+    label: "Message from the Chairman",
+    href: "/chairman-message",
+    disabled: false,
+  },
+  { label: "Our Values", href: "/our-values", disabled: false },
+  { label: "Our Journey", href: "/our-journey", disabled: true },
+  { label: "Our Team", href: "/our-team", disabled: true },
 ];
 
 export default function Navbar() {
@@ -61,19 +69,34 @@ export default function Navbar() {
 
             {/* Nav links */}
             <ul className="flex flex-col gap-5">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`font-antic text-2xl leading-tight transition-colors hover:text-[#bfaf9d] ${
-                      pathname === link.href ? "text-[#bfaf9d]" : "text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isDisabled = link.disabled;
+
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={(event) => {
+                        if (isDisabled) {
+                          event.preventDefault();
+                          return;
+                        }
+                        setOpen(false);
+                      }}
+                      aria-disabled={isDisabled}
+                      className={`font-antic text-2xl leading-tight transition-colors hover:text-[#bfaf9d] ${
+                        isDisabled
+                          ? "text-white/50 cursor-not-allowed opacity-50"
+                          : pathname === link.href
+                            ? "text-[#bfaf9d]"
+                            : "text-white"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
 
             {/* Bottom contact */}
@@ -104,7 +127,7 @@ export default function Navbar() {
             </div>
 
             {/* Menu icon */}
-            {/* <button
+            <button
               onClick={() => setOpen(true)}
               className="flex flex-col gap-[7px] cursor-pointer p-2 mt-1 group"
               aria-label="Open menu"
@@ -112,7 +135,7 @@ export default function Navbar() {
               <span className="block w-[40px] h-[2px] bg-white transition-all group-hover:w-[34px]" />
               <span className="block w-[40px] h-[2px] bg-white" />
               <span className="block w-[40px] h-[2px] bg-white transition-all group-hover:w-[29px]" />
-            </button> */}
+            </button>
           </div>
         </div>
 
@@ -144,20 +167,35 @@ export default function Navbar() {
               </button>
             </div>
             {/* Nav links */}
-            <ul className="pt-[40px] xl:pt-[70px] pl-[20px] md:pl-0">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`font-antic md:text-[20px] text-[25px] xl:text-[36px] mb-[20px] inline-block leading-tight transition-colors hover:text-[#bfaf9d] ${
-                      pathname === link.href ? "text-[#bfaf9d]" : "text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="pt-[40px] xl:pt-[148px] pl-[20px] md:pl-0">
+              {navLinks.map((link) => {
+                const isDisabled = link.disabled;
+
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={(event) => {
+                        if (isDisabled) {
+                          event.preventDefault();
+                          return;
+                        }
+                        setOpen(false);
+                      }}
+                      aria-disabled={isDisabled}
+                      className={`font-antic md:text-[20px] text-[25px] xl:text-[48px] mb-[20px] inline-block leading-tight transition-colors hover:text-[#bfaf9d] ${
+                        isDisabled
+                          ? "text-white/50 cursor-not-allowed opacity-50"
+                          : pathname === link.href
+                            ? "text-[#bfaf9d]"
+                            : "text-white"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
