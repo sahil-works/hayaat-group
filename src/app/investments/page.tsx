@@ -45,7 +45,7 @@ export default function InvestmentsPage() {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/50">
           <div className="container mx-auto ">
-            <h1 className="pb-[40px]  pt-[100px] ml-[20px] xl:ml-[100px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[450px] lg:max-w-[570pxgit]">Global Investment<br /> Partnerships </h1>
+            <h1 className="pb-[40px]  pt-[100px] ml-[20px] xl:ml-[100px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[72px] leading-[1.2] text-white max-w-[450px] lg:max-w-[570px]">Global Investment<br /> Partnerships </h1>
           </div>
         </div>
       </div>            
@@ -61,7 +61,7 @@ export default function InvestmentsPage() {
               ></span>
             </div>            
             <Image src={leafe} alt="leafe" width={73} height={113} className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block" />
-            <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
+            <span className="absolute top-0  sm:-left-[64px]  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
             <div>
               <p className="mb-[20px] md:mb-[45px] text-[18px] sm:text-[25px] lg:text-[31px]  text-[#BFAF9D] md:pl-[90px]">
                 At Hayaat Group, we deploy patient, principal capital across a 

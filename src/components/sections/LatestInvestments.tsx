@@ -159,7 +159,7 @@ export default function LatestInvestments() {
                 </div>
               </div>
             </div>
-            <div className="max-w-[350px] mx-auto">
+            <div className="max-w-[160px] sm:max-w-[350px] mx-auto">
               <h2 className="text-[26px] mb-[10px] leading-[1] text-[#BFAF9D]">
                 {active.title}
               </h2>

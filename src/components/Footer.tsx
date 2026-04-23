@@ -24,10 +24,10 @@ export default function Footer() {
                       alt="Logo image"
                       width={132}
                       height={130}
-                      className="h-20 sm:h-[130px] w-20 sm:w-[132px]"
+                      className="h-20 sm:h-[130px] w-20 sm:w-[132px] xl:w-[171px] xl:h-[168px]"
                     />
                   </Link>
-                  <ul className="mt-[30px] md:mt-[60px] flex items-center">
+                  {/* <ul className="mt-[30px] md:mt-[60px] flex items-center">
                     <li className="pr-[22px]">
                       <Link href="#">
                         <Image
@@ -68,12 +68,13 @@ export default function Footer() {
                         />
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
-            <div className="item grid grid-cols-1 md:grid-cols-2">
-              <div className="">
+            {/* <div className="item grid grid-cols-1 md:grid-cols-2"> */}
+            <div className="item flex flex-col md:flex-row md:justify-end">
+              {/* <div className="">
                 <h4 className="text-white text-[28px] mb-[10px]">Site Map</h4>
                 <ul>
                   <li className="mb-[3px]">
@@ -109,24 +110,38 @@ export default function Footer() {
                     </Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               <div className="">
-                <h4 className="text-white text-[28px] mb-[10px]">
+                <h4 className="text-white text-[28px] mb-[10px] xl:mb-0">
                   Head Office
                 </h4>
-                <p className="text-white text-[16px] mb-[7px] Inter leading-[2] font-light">
+                {/* <p className="text-white text-[16px] xl:text-[28px] mb-[7px] Inter leading-[2] font-light">
                   Office 3207, HDS Tower,
                   <br /> Cluster F, JLT <br />
                   PO Box 390544
                   <br />
                   Dubai, United Arab Emirates
+                </p> */}
+
+                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                  Office 3207, HDS Tower,
                 </p>
+                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                  Cluster F, JLT
+                </p>
+                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                  PO Box 390544
+                </p>
+                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                  Dubai, United Arab Emirates
+                </p>
+
                 <ul>
-                  <li className="mb-[5px]">
+                  <li className="mb-[5px] mt-[26px]">
                     <Link
                       href="tel:+971 4 513 4951"
-                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                      className="text-white text-[16px] xl:text-[28px] mb-[7px] Inter font-light"
                     >
                       Tel: +971 4 513 4951
                     </Link>
@@ -134,7 +149,7 @@ export default function Footer() {
                   <li className="mb-[5px]">
                     <Link
                       href="tel:+971 4 513 4936"
-                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                      className="text-white text-[16px] mb-[7px]  xl:text-[28px] Inter font-light"
                     >
                       Fax: +971 4 513 4936
                     </Link>
@@ -142,7 +157,7 @@ export default function Footer() {
                   <li className="mb-[5px]">
                     <Link
                       href="mailto:info@hayaatgroup.com"
-                      className="text-white text-[16px] mb-[7px] Inter font-light"
+                      className="text-white text-[16px] xl:text-[28px] mb-[7px] Inter font-light"
                     >
                       E-mail: info@hayaatgroup.com
                     </Link>

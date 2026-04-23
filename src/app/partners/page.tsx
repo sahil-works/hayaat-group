@@ -34,7 +34,7 @@ export default function PartnersPage() {
   return (
     <>
       {/* Hero */}
-      <div className="relative">
+      <div className="relative h-[480px] sm:h-[600px] lg:h-auto">
         <div className="image">
           <Image
             src={hero}
@@ -45,7 +45,7 @@ export default function PartnersPage() {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end justify-start bg-black/80">
           <div className="text-center ">
-            <h1 className="pb-[100px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white">
+            <h1 className="pb-[100px] ml-[15px] md:ml-[128px] xl:ml-[346px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[72px] leading-[1.2] text-white text-start">
               Investments and partners
             </h1>
           </div>
@@ -91,7 +91,7 @@ export default function PartnersPage() {
       {/* Slider */}
       <div className="bg-[#BFAF9D] relative">
         <div className="container  custompl border-l-[1.8px] border-[#A58F77]">
-          <div className="py-[100px] teamslider md:pl-[90px]">
+          <div className="pt-[30px] sm:pt-[100px] pb-[60px] sm:pb-[100px] teamslider md:pl-[90px]">
             <Swiper
               modules={[Navigation]}
               loop={true}
@@ -106,7 +106,7 @@ export default function PartnersPage() {
                 <div className="">
                   <div className="grid grid-cols-2 items-center lg:min-h-[650px]">
                     <div className="text max-w-[517px]">
-                      <h2 className="Inter text-[#A58F77] text-[96px] leading-1">
+                      <h2 className="Inter text-[#A58F77] text-[70px] sm:text-[96px] leading-1">
                         01
                       </h2>
                       <p className="text-[18px] text-black Inter font-light mb-[20px]">
@@ -260,7 +260,7 @@ export default function PartnersPage() {
                 />
 
                 <span className="text-[24px] absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-30 text-[#000]">
-                  Read More
+                  LOAD MORE
                 </span>
               </Link>
             </div>
