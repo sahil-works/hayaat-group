@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import hero from "../../../public/assets/images/about/hero.jpg";
+import hero from "../../../public/assets/images/about/chairman.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Icon from "../../../public/assets/images/h.png";
 import Footer from "@/components/Footer";
@@ -38,7 +38,7 @@ export default function ChairmanMessagePage() {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/20">
           <div className="container mx-auto ">
-            <h1 className="pb-[100px] xl:pb-[170px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
+            <h1 className="pb-[100px] xl:pb-[210px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
               Message from
               <br />
               the Chairman

@@ -46,7 +46,7 @@ export default function HomeIntro() {
             />
             <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
 
-            <div className="max-w-[950px] xl:ml-[250px]">
+            <div className="max-w-[950px] xl:ml-[66px]">
               <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">
                 We are the Hayaat Group, a reputed, global principal investment
                 firm creating and accelerating growth through talent, integrity
