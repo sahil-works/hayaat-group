@@ -100,7 +100,7 @@ body {
 }
 
 .animate-lineGrow {
-  animation: lineGrow 5s ease forwards;
+  animation: lineGrow 10s ease forwards;
 }
 
 @keyframes lineX {

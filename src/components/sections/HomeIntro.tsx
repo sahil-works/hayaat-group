@@ -6,7 +6,11 @@ import Image from "next/image";
 import leafe from "../../../public/assets/images/leafe.png";
 // import Icon from "../../../public/assets/images/h.png";
 
-export default function HomeIntro() {
+type Props = {
+  onLineFinish?: () => void;
+};
+
+export default function HomeIntro({ onLineFinish }: Props) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -14,6 +18,7 @@ export default function HomeIntro() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShow(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.4 },
@@ -23,6 +28,14 @@ export default function HomeIntro() {
 
     return () => observer.disconnect();
   }, []);
+
+  // Notify parent when this line animation ends
+  useEffect(() => {
+    if (show && onLineFinish) {
+      const timer = setTimeout(onLineFinish, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [show, onLineFinish]);
 
   return (
     <>
@@ -42,7 +55,7 @@ export default function HomeIntro() {
               alt="leafe"
               width={73}
               height={113}
-              className="absolute top-0 left-0 md:-left-[36px] z-20 hidden sm:block"
+              className="absolute top-0 left-0 md:-left-[36px] z-20 hidden md:block"
             />
             <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
 

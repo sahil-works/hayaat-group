@@ -80,8 +80,8 @@ export default function LatestInvestments() {
                       spaceBetween: 1,
                     },
                     768: {
-                      slidesPerView: 2,
-                      spaceBetween: 25,
+                      slidesPerView: 1,
+                      spaceBetween: 1,
                     },
                     1024: {
                       slidesPerView: 3,

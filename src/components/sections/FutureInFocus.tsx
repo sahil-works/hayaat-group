@@ -42,7 +42,11 @@ const cards: Card[] = [
   },
 ];
 
-export default function FutureInFocus() {
+type Props = {
+  canStart?: boolean;
+};
+
+export default function FutureInFocus({ canStart = false }: Props) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -50,6 +54,7 @@ export default function FutureInFocus() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShow(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.4 },
@@ -60,6 +65,8 @@ export default function FutureInFocus() {
     return () => observer.disconnect();
   }, []);
 
+  const animate = show && canStart;
+
   return (
     <div>
       <div className="bg-[#3F3B33] -mt-[1px]">
@@ -68,7 +75,7 @@ export default function FutureInFocus() {
           <div ref={ref} className="">
             <span
               className={`absolute left-0 top-0 h-[1px] w-full bg-[#A58F77] origin-left hidden md:block
-            ${show ? "animate-lineX" : "scale-x-0"}`}
+            ${animate ? "animate-lineX" : "scale-x-0"}`}
             ></span>
           </div>
           <div className="pb-[28px] sm:pb-[54px] xl:pb-[104px] sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[82px]">
