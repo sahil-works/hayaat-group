@@ -115,7 +115,11 @@ export default function Navbar() {
           <div className="flex justify-between items-start">
             {/* Logo */}
             <div className="image">
-              <Link href="/" className="inline-block">
+              <Link
+                onClick={() => setOpen(false)}
+                href="/"
+                className="inline-block"
+              >
                 <Image
                   src={Logo}
                   alt="Logo image"
@@ -148,7 +152,11 @@ export default function Navbar() {
           <div className="container mx-auto">
             <div className="flex justify-between items-start">
               <div className="image">
-                <Link href="/" className="inline-block">
+                <Link
+                  href="/"
+                  onClick={() => setOpen(false)}
+                  className="inline-block"
+                >
                   <Image
                     src={Logo}
                     alt="Logo image"

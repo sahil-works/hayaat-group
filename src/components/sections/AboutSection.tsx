@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Icon from "../../../public/assets/images/h-fill.png";
 
-export default function AboutSection() {
+type Props = {
+  canStart?: boolean;
+  onLineFinish?: () => void;
+};
+
+export default function AboutSection({ canStart = false, onLineFinish }: Props) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
 
@@ -13,6 +18,7 @@ export default function AboutSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShow(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.4 },
@@ -23,6 +29,16 @@ export default function AboutSection() {
     return () => observer.disconnect();
   }, []);
 
+  const animate = show && canStart;
+
+  // Notify parent when this line animation ends
+  useEffect(() => {
+    if (animate && onLineFinish) {
+      const timer = setTimeout(onLineFinish, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [animate, onLineFinish]);
+
   return (
     <>
       <div className="w-full relative h-[490px] sm:h-[590px] lg:h-[764px] bg-[url('/assets/images/about/Paralax.png')] bg-fixed bg-cover bg-center bg-no-repeat">
@@ -32,7 +48,7 @@ export default function AboutSection() {
         >
           <span
             className={`absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top hidden md:block
-            ${show ? "animate-lineGrow" : "scale-y-0"}`}
+            ${animate ? "animate-lineGrow" : "scale-y-0"}`}
           ></span>
           <Image
             src={Icon}

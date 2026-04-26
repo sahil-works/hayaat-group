@@ -30,7 +30,7 @@ export default function SeedsOfSuccess() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section ref={ref} className="relative w-full overflow-hidden">
       <Image
         src="/assets/images/bg.png"
         alt="Background"
@@ -40,7 +40,7 @@ export default function SeedsOfSuccess() {
       />
       <div className="container  custompl border-l-[1.8px] border-[#A58F77]">
         {/* Heading */}
-        <div className="pt-[40px] sm:pt-[80px] xl:pt-[130px] md:pl-[60px]">
+        <div className="pt-[40px] sm:pt-[80px] xl:pt-[91px] md:pl-[60px] xl:pl-[76px]">
           <h2 className="text-[38px] sm:text-[50px] md:text-[65px] xl:text-[72px] mb-[5px] xl:mb-[15px] leading-[1.2] text-[#3F3B33]">
             Seeds of Success{" "}
           </h2>
@@ -60,7 +60,7 @@ export default function SeedsOfSuccess() {
         </div>
 
         {/* World map placeholder */}
-        <div className="-mt-[10px] mb-[45px]">
+        <div className="-mt-[10px] mb-[45px] xl:mb-0">
           {/* <Image
             src={map}
             alt="map"
@@ -70,24 +70,26 @@ export default function SeedsOfSuccess() {
         </div>
 
         {/* Stats */}
-        <div className="max-w-[880px] demo">
+        <div className="pb-[40px] sm:pb-[80px] xl:pb-[130px]">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="item pt-5 mb-[25px] sm:mb-[46px] flex items-start gap-12 relative"
-            >
-              <p className="font-antic text-[#3d3830] text-[30px] sm:text-[55px] md:text-[65px] xl:text-[83px] inline-block py-[10px] px-[20px] sm:px-[30px] bg-white/90 leading-none mb-2 min-w-[180px] text-right">
-                {stat.number}
+            <div key={stat.label} className="mb-[28px] sm:mb-[44px] flex items-end">
+              {/* Short left accent line — aligns with bottom line */}
+              <span className="block h-[1.5px] w-[40px] sm:w-[55px] bg-[#A58F77] flex-shrink-0 mb-0" />
+              {/* Number */}
+              <p className="font-antic text-[#3d3830] leading-none flex-shrink-0 mx-2 sm:mx-3">
+                <span className="text-[48px] sm:text-[65px] md:text-[75px] xl:text-[84px]">
+                  {stat.number.replace("+", "")}
+                </span>
+                <span className="text-[24px] sm:text-[28px] md:text-[32px] xl:text-[36px]">+</span>
               </p>
-              <p className="text-[#3F3B33] font-light text-[16px] md:text-[25px] leading-snug absolute left-[220px] right-0 sm:text-left ml-[200px]">
-                {stat.label}
-              </p>
-              {/* <span className="block h-[0.8px] sm:h-[1.83px] bg-[#A58F77] absolute left-0 right-0 bottom-[30px] sm:bottom-[47px] -z-20 origin-left scale-x-0 animate-lineX"></span> */}
-              <div ref={ref} className="">
+              {/* Right side: label above, line at bottom — line matches left dash height */}
+              <div className="flex-1 flex flex-col items-end xl:pr-[348px] ">
+                <span className="text-[#3F3B33] font-light text-[11px] sm:text-[13px] md:text-[16px] xl:text-[26px] tracking-wide mb-[6px] sm:mb-[8px] xl:mb-[10px] md:w-[470px]">
+                  {stat.label}
+                </span>
                 <span
-                  className={`block h-[0.8px] sm:h-[1px] bg-[#A58F77] absolute left-0 right-0 bottom-[30px] sm:bottom-[47px] -z-20 origin-left
-                  ${show ? "animate-lineX" : "scale-x-0"}`}
-                ></span>
+                  className={`block h-[1.5px] bg-[#A58F77] w-full origin-left ${show ? "animate-lineX" : "scale-x-0"}`}
+                />
               </div>
             </div>
           ))}

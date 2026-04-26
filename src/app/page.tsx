@@ -13,11 +13,13 @@ import Footer from "@/components/Footer";
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const [introLineDone, setIntroLineDone] = useState(false);
+  const [aboutLineDone, setAboutLineDone] = useState(false);
 
   const handleLoaderFinish = () => {
     setIsLoaded(true);
     setShowLoader(false);
-    localStorage.setItem("hasVisited", "true"); // Save flag
+    localStorage.setItem("hasVisited", "true");
   };
 
   useEffect(() => {
@@ -33,9 +35,9 @@ export default function Home() {
       {isLoaded && (
         <main>
           <HomeHero />
-          <HomeIntro />
-          <AboutSection />
-          <FutureInFocus />
+          <HomeIntro onLineFinish={() => setIntroLineDone(true)} />
+          <AboutSection canStart={introLineDone} onLineFinish={() => setAboutLineDone(true)} />
+          <FutureInFocus canStart={aboutLineDone} />
           <SeedsOfSuccess />
           <LatestInvestments />
           <Footer />

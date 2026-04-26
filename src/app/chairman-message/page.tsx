@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import hero from "../../../public/assets/images/about/hero.jpg";
+import hero from "../../../public/assets/images/about/chairman.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Icon from "../../../public/assets/images/h.png";
 import Footer from "@/components/Footer";
@@ -27,18 +27,18 @@ export default function ChairmanMessagePage() {
   return (
     <main>
       {/* Hero */}
-      <div className="relative">
-        <div className="image">
-          <Image
+      <div className="relative bg-black h-full">
+        <div className="image bg-black h-[460px] sm:h-[650px] lg:h-[810px] w-full">
+          {/* <Image
             src={hero}
             alt="hero image"
             style={{ width: "100%", height: "810" }}
             className="block h-[500px] md:h-[90vh] xl:h-auto object-cover"
-          />
+          /> */}
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/20">
           <div className="container mx-auto ">
-            <h1 className="pb-[100px] xl:pb-[170px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
+            <h1 className="pb-[100px] xl:pb-[210px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
               Message from
               <br />
               the Chairman
@@ -48,7 +48,8 @@ export default function ChairmanMessagePage() {
       </div>
 
       {/* Intro body text */}
-      <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] relative bg-[#BFAF9D]">
+
+      <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] xl:pt-[38px] relative bg-[#BFAF9D]">
         <span className=" bg-[#3F3B33] absolute top-0 left-0 right-0 bottom-0 "></span>
         <span className="w-full h-[380px] sm:h-[665px] bg-[#3F3B33] absolute top-0 left-0 right-0 -z-2"></span>
         <div className="container relative z-20">
@@ -75,22 +76,22 @@ export default function ChairmanMessagePage() {
               height={75}
               className="hidden md:block absolute top-[50%] left-0 xl:-left-[56px] md:ml-5 xl:ml-0"
             /> */}
-            <div>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+            <div className="xl:mt-[126px] xl:max-w-[1014px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 Chairman’s Message
               </p>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 Our journey began with a simple belief: build with conviction
                 and take responsibility for outcomes.
               </p>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 My early career in the Oil & Gas industry exposed me to
                 environments where execution leaves little room for error. That
                 experience instilled a mindset of discipline, technical rigor,
                 and accountability - principles that continue to define how we
                 approach investments today.
               </p>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 As we transitioned into real estate, we found an opportunity to
                 translate that mindset into creating physical assets of lasting
                 value. We worked in markets that required patience and
@@ -99,20 +100,20 @@ export default function ChairmanMessagePage() {
                 backing opportunities where conviction, not sentiment, drives
                 decisions.
               </p>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 Being a family-led platform allows us to take a longer view. We
                 are not constrained by short-term horizons; instead, we focus on
                 creating value that compounds over years, not quarters. This
                 perspective shapes how we evaluate opportunities, structure
                 partnerships, and manage risk.
               </p>
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[74px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 I would like to thank our partners, teams, and stakeholders who
                 have trusted us over the years. The journey continues, and we
                 approach it with the same discipline and intent that defined our
                 beginnings.
               </p>
-              <p className="mb-[20px] sm:mb-[80px] lg:mb-[133px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+              <p className="mb-[20px] sm:mb-[80px] lg:mb-[133px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 Mohammed Ikhlaq
                 <br />
                 Founder & Chairman

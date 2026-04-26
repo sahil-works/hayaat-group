@@ -42,7 +42,11 @@ const cards: Card[] = [
   },
 ];
 
-export default function FutureInFocus() {
+type Props = {
+  canStart?: boolean;
+};
+
+export default function FutureInFocus({ canStart = false }: Props) {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -50,6 +54,7 @@ export default function FutureInFocus() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShow(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.4 },
@@ -60,6 +65,8 @@ export default function FutureInFocus() {
     return () => observer.disconnect();
   }, []);
 
+  const animate = show && canStart;
+
   return (
     <div>
       <div className="bg-[#3F3B33] -mt-[1px]">
@@ -68,14 +75,14 @@ export default function FutureInFocus() {
           <div ref={ref} className="">
             <span
               className={`absolute left-0 top-0 h-[1px] w-full bg-[#A58F77] origin-left hidden md:block
-            ${show ? "animate-lineX" : "scale-x-0"}`}
+            ${animate ? "animate-lineX" : "scale-x-0"}`}
             ></span>
           </div>
-          <div className="pb-[28px] sm:pb-[54px] sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[80px]">
-            <h2 className="text-[#BFAF9D] text-[37px] sm:text-[42px] md:text-[60px] xl:text-[72px] leading-tight mb-[30px] sm:mb-[28px] mt-0 font-[400]">
+          <div className="pb-[28px] sm:pb-[54px] xl:pb-[104px] sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[82px]">
+            <h2 className="text-[#BFAF9D] text-[37px] sm:text-[42px] md:text-[60px] xl:text-[72px] leading-tight mb-[30px] sm:mb-[28px] xl:mb-[22px] mt-0 font-[400]">
               The Future in Focus
             </h2>
-            <p className="Inter text-white text-[15px] lg:text-[18px] font-[300] leading-[2] xl:leading-[3] max-w-[1100px] mb-[30px] sm:mb-[50px] xl:mb-[50px] opacity-85">
+            <p className="Inter text-white text-[15px] lg:text-[18px] font-[300] leading-[2] max-w-[1100px] xl:max-w-[908px] mb-[30px] sm:mb-[50px] xl:mb-[50px]">
               At the Hayaat Group, our investment strategy is guided by
               generational enterprise and time-tested expertise. We function as
               principal investor across thoughtfully diversified areas,
@@ -207,15 +214,15 @@ export default function FutureInFocus() {
 
       <div className="bg-[#BFAF9D]">
         <div className="container  border-[#A58F77] border-l-[1.8px] relative">
-          <div className="sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[80px] pb-[79px]">
-            {/* <p className="font-normal text-3xl sm:text-4xl text-[#3F3B33]">
+          <div className="sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[80px] xl:pt-[87px] pb-[79px] xl:pb-[83px]">
+            <p className="font-normal text-3xl sm:text-4xl text-[#3F3B33]">
               Strategic framework
-            </p> */}
+            </p>
             <h2 className="mt-2 font-normal text-[38px] md:text-[48px] lg:text-[73px] text-[#3F3B33]">
               Our Four Investment Verticals
             </h2>
 
-            <p className="font-normal text-lg leading-6 text-[#3F3B33] max-w-[1100px]">
+            <p className="font-medium text-lg leading-6 text-black max-w-[1100px] xl:max-w-[1008px]">
               Hayaat Group is structured around four complementary pillars —
               each purpose-built to generate alpha within its domain, while
               collectively forming a resilient, self-reinforcing platform

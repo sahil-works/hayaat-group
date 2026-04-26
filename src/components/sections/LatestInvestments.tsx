@@ -69,7 +69,9 @@ export default function LatestInvestments() {
                   spaceBetween={30}
                   autoplay={{ delay: 3000 }}
                   onSlideChange={(swiper) => {
-                    const centerIndex = (swiper.realIndex + 1) % slides.length;
+                    const perView = swiper.params.slidesPerView as number;
+                    const offset = perView >= 3 ? 1 : 0;
+                    const centerIndex = (swiper.realIndex + offset) % slides.length;
                     setActiveIndex(centerIndex);
                   }}
                   breakpoints={{
@@ -78,8 +80,8 @@ export default function LatestInvestments() {
                       spaceBetween: 1,
                     },
                     768: {
-                      slidesPerView: 2,
-                      spaceBetween: 25,
+                      slidesPerView: 1,
+                      spaceBetween: 1,
                     },
                     1024: {
                       slidesPerView: 3,
