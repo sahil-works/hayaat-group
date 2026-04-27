@@ -58,7 +58,7 @@ export default function ChairmanMessagePage() {
             <div ref={ref} className="">
               <span
                 className={`absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top hidden md:block
-                ${show ? "animate-lineGrow" : "scale-y-0"}`}
+                ${show ? "animate-lineGrow-slow" : "scale-y-0"}`}
               ></span>
             </div>
             <Image
