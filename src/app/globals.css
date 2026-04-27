@@ -103,6 +103,10 @@ body {
   animation: lineGrow 10s ease forwards;
 }
 
+.animate-lineGrow-slow {
+  animation: lineGrow 30s ease forwards;
+}
+
 @keyframes lineX {
   from {
     transform: scaleX(0);
