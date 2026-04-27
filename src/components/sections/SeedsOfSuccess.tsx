@@ -76,8 +76,8 @@ export default function SeedsOfSuccess() {
               {/* Label row — sits above the line row */}
               <div className="flex items-end xl:pr-[348px]">
                 <span className="block w-[40px] sm:w-[55px] flex-shrink-0" />
-                <div className="flex-1 flex justify-center ml-[324px]">
-                  <span className="text-[#3F3B33] font-light text-[11px] sm:text-[13px] md:text-[16px] xl:text-[26px] tracking-wide mb-[6px] sm:mb-[8px] xl:mb-[10px]">
+                <div className="flex-1 flex justify-end xl:justify-normal xl:ml-[522px]">
+                  <span className="text-[#3F3B33] font-light text-[11px] sm:text-[13px] md:text-[16px] xl:text-[26px] tracking-wide mb-[6px] sm:mb-[8px] xl:mb-[-26px]">
                     {stat.label}
                   </span>
                 </div>
