@@ -18,7 +18,7 @@ const navLinks = [
     disabled: false,
   },
   { label: "Our Values", href: "/our-values", disabled: false },
-  { label: "Our Journey", href: "/our-journey", disabled: true },
+  { label: "Our Journey", href: "/our-journey", disabled: false },
   { label: "Our Team", href: "/our-team", disabled: true },
 ];
 

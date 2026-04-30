@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import hero from "../../../public/assets/images/about/chairman.png";
+import hero from "../../../public/assets/images/about/chairman-new.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Icon from "../../../public/assets/images/h.png";
 import Footer from "@/components/Footer";
@@ -27,14 +27,14 @@ export default function ChairmanMessagePage() {
   return (
     <main>
       {/* Hero */}
-      <div className="relative bg-black h-full">
-        <div className="image bg-black h-[460px] sm:h-[650px] lg:h-[810px] w-full">
-          {/* <Image
+      <div className="relative">
+        <div className="image w-full">
+          <Image
             src={hero}
             alt="hero image"
             style={{ width: "100%", height: "810" }}
-            className="block h-[500px] md:h-[90vh] xl:h-auto object-cover"
-          /> */}
+            className="block h-[500px] md:h-[90vh] xl:h-auto"
+          />
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/20">
           <div className="container mx-auto ">
@@ -51,7 +51,7 @@ export default function ChairmanMessagePage() {
 
       <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] xl:pt-[38px] relative bg-[#BFAF9D]">
         <span className=" bg-[#3F3B33] absolute top-0 left-0 right-0 bottom-0 "></span>
-        <span className="w-full h-[380px] sm:h-[665px] bg-[#3F3B33] absolute top-0 left-0 right-0 -z-2"></span>
+        <span className="w-full h-[380px] sm:h-[665px] bg-[#3F3B33] absolute top-0 xl:top-[-12px] left-0 right-0 -z-2"></span>
         <div className="container relative z-20">
           <div className="text  flex items-start">
             {/* <span className="absolute left-0 top-0 w-[1px] h-full border-l-[1.8px] border-[#A58F77] origin-top scale-y-0 animate-lineGrow hidden md:block"></span> */}
