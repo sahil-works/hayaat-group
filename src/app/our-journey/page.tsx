@@ -1,18 +1,36 @@
 "use client";
 
-import { Autoplay, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
 import Image from "next/image";
-import hero from "../../../public/assets/images/about/hero.jpg";
-import ship from "../../../public/assets/images/about/ship.png";
-import whiteh from "../../../public/assets/images/whiteH.png";
+import { useEffect, useRef, useState } from "react";
+
+import hero from "../../../public/assets/images/about/our-jorney-new.png";
+import himg from "../../../public/assets/images/about/h-name.svg";
+import journey from "../../../public/assets/images/about/journey.jpeg";
+import looking from "../../../public/assets/images/about/looking.jpeg";
 import breeam from "../../../public/assets/images/about/icon/1.png";
 import international from "../../../public/assets/images/about/icon/2.png";
+import leafe from "../../../public/assets/images/leafe.png";
 import Footer from "@/components/Footer";
 
 export default function AboutPage() {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main>
       {/* Hero */}
@@ -22,243 +40,303 @@ export default function AboutPage() {
             src={hero}
             alt="hero image"
             style={{ width: "100%", height: "810" }}
-            className="block h-[500px] md:h-[90vh] xl:h-auto object-cover"
+            className="block h-[500px] md:h-[90vh] xl:h-[810px] object-cover"
           />
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/20">
-          <div className="container mx-auto ">
-            <h1 className="pb-[100px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
+          <div className="container mx-auto">
+            <h1 className="pb-[100px] xl:pb-[70px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[73px] leading-[1.2] text-white max-w-[528px]">
               Our Journey
             </h1>
           </div>
         </div>
       </div>
 
-      {/* We've Come A Long Way — Timeline */}
-      <div className="container border-l-[1.83px] border-[#A58F77]  overflow-x-hidden">
-        <div className="pt-[35px] md:pt-[80px] lg:pt-[127px] pb-[50px] md:pb-[88px]">
-          <h2 className="text-[35px] md:text-[50px] lg:text-[60px] xl:text-[72px]  text-center mb-8 md:mb-0">
-            We’ve Come A Long Way
-          </h2>
-          <div className="relative">
-            <div className="ml-auto -mr-[80px] md:-mr-[120px]">
-              <Image
-                src={ship}
-                alt="ship"
-                style={{ width: "auto", height: "auto" }}
-                className="ml-auto shipImage"
-              />
-            </div>
-            <div className=" max-w-[80%] md:max-w-full mx-auto absolute top-0 left-0 right-0 bottom-0 md:flex justify-start items-center ">
-              <div className="relative slider max-w-[860px] mx-auto ">
-                <Swiper
-                  modules={[Navigation, Autoplay]}
-                  loop
-                  navigation={{
-                    prevEl: ".custom-prev",
-                    nextEl: ".custom-next",
-                  }}
-                  slidesPerView={3}
-                  spaceBetween={30}
-                  autoplay={{ delay: 3000 }}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      spaceBetween: 1,
-                    },
+      {/* Full-page wrapper — leaf + animated line run from top to bottom of this div */}
+      <div ref={ref} className="relative">
+        {/* Leaf image pinned to top-left of container */}
+        <div className="hidden md:block absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-20">
+          <div className="container mx-auto h-full relative">
+            <Image
+              src={leafe}
+              alt="leafe"
+              width={73}
+              height={113}
+              className="absolute -left-[36px] z-20"
+              style={{ top: "99px" }}
+            />
+            <span
+              className="absolute -left-[36px] bg-[#7E6952] w-[75px] h-[130px] z-10"
+              style={{ top: "99px" }}
+            ></span>
+            {/* Animated vertical line — starts below the leaf */}
+            <span
+              className={`absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] origin-top transition-all duration-[8000ms] ease-in-out
+                ${show ? "h-full" : "h-0"}`}
+              style={{ top: "99px" }}
+            ></span>
+          </div>
+        </div>
 
-                    562: {
-                      slidesPerView: 2,
-                      spaceBetween: 25,
-                    },
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                  }}
-                >
-                  <SwiperSlide>
-                    <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">
-                        1925
-                      </h2>
-                      <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
-                        The first generation Elahi family enters the business
-                        world managing contracts for the British Army
-                      </p>
-                      <div className="flex items-center">
-                        <span className="h-[1px] bg-white block w-full"></span>
-                        <Image
-                          src={whiteh}
-                          alt="about"
-                          style={{ width: "auto", height: "auto" }}
-                          className="ml-[10px]"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">
-                        2000
-                      </h2>
-                      <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
-                        Hayaat Group is founded
-                      </p>
-                      <div className="flex items-center">
-                        <span className="h-[1px] bg-white block w-full"></span>
-                        <Image
-                          src={whiteh}
-                          alt="about"
-                          style={{ width: "auto", height: "auto" }}
-                          className="ml-[10px]"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">
-                        2002
-                      </h2>
-                      <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
-                        The group embarks on real estate development and urban
-                        regeneration in the Northwest of England
-                      </p>
-                      <div className="flex items-center">
-                        <span className="h-[1px] bg-white block w-full"></span>
-                        <Image
-                          src={whiteh}
-                          alt="about"
-                          style={{ width: "auto", height: "auto" }}
-                          className="ml-[10px]"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">
-                        1925
-                      </h2>
-                      <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
-                        The first generation Elahi family enters the business
-                        world managing contracts for the British Army
-                      </p>
-                      <div className="flex items-center">
-                        <span className="h-[1px] bg-white block w-full"></span>
-                        <Image
-                          src={whiteh}
-                          alt="about"
-                          style={{ width: "auto", height: "auto" }}
-                          className="ml-[10px]"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">
-                        2000
-                      </h2>
-                      <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
-                        Hayaat Group is founded
-                      </p>
-                      <div className="flex items-center">
-                        <span className="h-[1px] bg-white block w-full"></span>
-                        <Image
-                          src={whiteh}
-                          alt="about"
-                          style={{ width: "auto", height: "auto" }}
-                          className="ml-[10px]"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="bg-[#BFAF9D] py-[20px] pr-[24px] pl-[33px] rounded-[10px] h-full">
-                      <h2 className="text-[46px] md:text-[72px] text-white mb-[20px]">
-                        2002
-                      </h2>
-                      <p className="text-[16px] Inter pb-[50px] min-h-[146px]">
-                        The group embarks on real estate development and urban
-                        regeneration in the Northwest of England
-                      </p>
-                      <div className="flex items-center">
-                        <span className="h-[1px] bg-white block w-full"></span>
-                        <Image
-                          src={whiteh}
-                          alt="about"
-                          style={{ width: "auto", height: "auto" }}
-                          className="ml-[10px]"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                </Swiper>
-                <div className="">
-                  <div className="custom-prev  cursor-pointer absolute top-[50%] -left-[40px] sm:-left-[50px] -translate-y-[50%]">
-                    <svg
-                      width="35"
-                      height="35"
-                      viewBox="0 0 57 57"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M28.4004 55.9C43.5882 55.9 55.9004 43.5879 55.9004 28.4C55.9004 13.2122 43.5882 0.900024 28.4004 0.900024C13.2126 0.900024 0.900391 13.2122 0.900391 28.4C0.900391 43.5879 13.2126 55.9 28.4004 55.9Z"
-                        stroke="#A58F77"
-                        stroke-width="1.8"
-                        stroke-miterlimit="10"
-                      />
-                      <path
-                        d="M42.9218 28.4H14.3008"
-                        stroke="#A58F77"
-                        stroke-width="1.8"
-                        stroke-miterlimit="10"
-                      />
-                      <path
-                        d="M23.9226 18.7781L14.3008 28.4L23.9226 38.0111"
-                        stroke="#A58F77"
-                        stroke-width="1.8"
-                        stroke-miterlimit="10"
-                      />
-                    </svg>
-                  </div>
-                  <div className="custom-next  cursor-pointer absolute top-[50%] -right-[40px] sm:-right-[50px] -translate-y-[50%]">
-                    <svg
-                      width="35"
-                      height="35"
-                      viewBox="0 0 57 57"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M28.4003 55.9C43.5881 55.9 55.9004 43.5879 55.9004 28.4C55.9004 13.2122 43.5881 0.900024 28.4003 0.900024C13.2125 0.900024 0.900391 13.2122 0.900391 28.4C0.900391 43.5879 13.2125 55.9 28.4003 55.9Z"
-                        stroke="#A58F77"
-                        stroke-width="1.8"
-                        stroke-miterlimit="10"
-                      />
-                      <path
-                        d="M13.8887 28.4H42.4991"
-                        stroke="#A58F77"
-                        stroke-width="1.8"
-                        stroke-miterlimit="10"
-                      />
-                      <path
-                        d="M32.8887 18.7781L42.5 28.4L32.8887 38.0111"
-                        stroke="#A58F77"
-                        stroke-width="1.8"
-                        stroke-miterlimit="10"
-                      />
-                    </svg>
-                  </div>
-                </div>
+        {/* Hayaat Group a Legacy Reimagined */}
+        <div className="pt-[40px] md:pt-[80px] lg:pt-[114px] xl:pt-[69px] relative">
+          <span className="w-full h-[380px] sm:h-[665px] bg-[#7E6952] absolute top-0 left-0 right-0 -z-[1]"></span>
+          <div className="container relative z-10">
+            <div className="flex items-start">
+              <div className="xl:max-w-[1070px]">
+                <h5 className="mb-[20px] md:mb-[40px] lg:mb-[21px] text-[18px] sm:text-[25px] lg:text-[32px] xl:text-[73px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                  Hayaat Group,
+                  <br /> A Legacy Reimagined
+                </h5>
+                <p className="mb-[20px] md:mb-[40px] lg:mb-[24px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#E2DDDB] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                  From Family Enterprise to Institutional Investment Platform
+                </p>
+                <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] xl:mb-[121px] text-[18px] sm:text-[25px] lg:text-[32px] text-white sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                  The Hayaat story spans nearly a century — rooted in
+                  entrepreneurial discipline, shaped by resilience, and now
+                  entering a new chapter as a focused institutional investment
+                  platform.
+                </p>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Timeline section */}
+        <div className="py-[60px] md:py-[100px] xl:pt-[143px] xl:pb-[79px] bg-white">
+          <div className="container mx-auto px-4 relative">
+            {/* Vertical center line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-[1.5px] bg-[#C9B99A] -translate-x-1/2 hidden md:block"></div>
+
+            {/* 1920s–1980s — LEFT */}
+            <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
+              <div className="md:w-1/2 md:pr-[58px] xl:pl-[48px] md:text-right xl:text-start">
+                <h2
+                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                  style={{ fontFamily: "var(--font-antic)" }}
+                >
+                  1920s–1980s
+                </h2>
+                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                  Foundations:
+                  <br />
+                  Built on Family and Enterprise
+                </h4>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[336px]">
+                  The Hayaat story begins nearly a century ago, when the Elahi
+                  family built a strong entrepreneurial foundation across real
+                  estate, hospitality, and trading.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
+                  By the 1960s, the second generation expanded into the UK,
+                  carrying forward a philosophy rooted in discipline,
+                  resilience, and long-term thinking.
+                </p>
+              </div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
+                <Image src={himg} alt="marker" width={34} height={34} />
+              </div>
+              <div className="md:w-1/2 md:pl-[58px]"></div>
+            </div>
+
+            {/* 1990s — RIGHT */}
+            <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
+              <div className="md:w-1/2 md:pr-[60px]"></div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
+                <Image src={himg} alt="marker" width={34} height={34} />
+              </div>
+              <div className="md:w-1/2 md:pl-[58px]">
+                <h2
+                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                  style={{ fontFamily: "var(--font-antic)" }}
+                >
+                  1990s
+                </h2>
+                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                  The Third Generation:
+                  <br />
+                  Built a Renewed Foundation
+                </h4>
+                <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[336px]">
+                  For Mohammed Ikhlaq (MI), the journey was not simply inherited
+                  — it was forged. After building strong experience in global
+                  oil services, working on large-scale international projects,
+                  he decided to craft his own path.
+                </p>
+                <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
+                  That moment became the turning point. He chose to rebuild —
+                  from the ground up
+                </p>
+              </div>
+            </div>
+
+            {/* Timeline label */}
+            <div className="relative flex justify-center mb-[60px] md:mb-[80px]">
+              <Image src={journey} alt="The Journey: A Timeline" className="w-auto" />
+            </div>
+
+            {/* 1995–2008 — LEFT */}
+            <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
+              <div className="md:w-1/2 md:pr-[58px] xl:pl-[48px] md:text-right xl:text-start">
+                <h2
+                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                  style={{ fontFamily: "var(--font-antic)" }}
+                >
+                  1995–2008
+                </h2>
+                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                  Building the Core:
+                  <br />
+                  Oil &amp; Gas Platform
+                </h4>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
+                  MI founded an oil & gas platform in the GCC, starting small
+                  but growing rapidly through execution, trust, and consistency.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
+                  The business became part of major regional developments,
+                  establishing a reputation for reliability and delivery.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[368px]">
+                  This phase laid the foundation for Hayaat — built not on
+                  opportunity alone, but on hard work, values, and credibility.
+                </p>
+              </div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
+                <Image src={himg} alt="marker" width={34} height={34} />
+              </div>
+              <div className="md:w-1/2 md:pl-[58px]"></div>
+            </div>
+
+            {/* 2005–2021 — RIGHT */}
+            <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
+              <div className="md:w-1/2 md:pr-[60px]"></div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
+                <Image src={himg} alt="marker" width={34} height={34} />
+              </div>
+              <div className="md:w-1/2 md:pl-[58px]">
+                <h2
+                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                  style={{ fontFamily: "var(--font-antic)" }}
+                >
+                  2005–2021
+                </h2>
+                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                  From Operator to Investor:
+                  <br />
+                  Expanding the Platform
+                </h4>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                  With a strong operating base, MI established Hayaat Group to
+                  expand beyond a single sector and geography.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                  Expansion into new markets, including Africa.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                  Entry into real estate and asset development.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                  Gradual move into early-stage and venture investments
+                  globally.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[354px]">
+                  Hayaat evolved into a diversified platform — combining
+                  operational expertise with investment acumen.
+                </p>
+              </div>
+            </div>
+
+            {/* 2022+ — LEFT */}
+            <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
+              <div className="md:w-1/2 md:pr-[58px] xl:pl-[48px] md:text-right xl:text-start">
+                <h2
+                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                  style={{ fontFamily: "var(--font-antic)" }}
+                >
+                  2022+
+                </h2>
+                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                  Institutionalising for the Future: A Platform for Impact
+                </h4>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
+                  Hayaat is entering its next phase — institutionalising its
+                  investment platform and sharpening its focus on direct
+                  investments.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
+                  Moving beyond capital to become a value-creation partner.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
+                  Building long-term platforms in core sectors.
+                </p>
+                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[400px]">
+                  Delivering sustainable growth across key markets.
+                </p>
+              </div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
+                <Image src={himg} alt="marker" width={34} height={34} />
+              </div>
+              <div className="md:w-1/2 md:pl-[58px]"></div>
+            </div>
+
+            {/* Looking Ahead label */}
+            <div className="relative flex justify-center pt-[20px] mb-[60px] md:mb-[80px]">
+              <Image src={looking} alt="Looking Ahead" className="w-auto" />
+            </div>
+          </div>
+
+          {/* Quote text */}
+          <div className="text-center px-4 mb-[40px] md:mb-[56px]">
+            <p
+              className="text-[18px] md:text-[22px] lg:text-[26px] xl:text-[36px] text-[#3F3B33] leading-[1.5] max-w-[700px] xl:max-w-[950px] mx-auto"
+              style={{ fontFamily: "var(--font-antic)" }}
+            >
+              As the next generation begins to step forward, Hayaat continues to
+              build on the same principles that started it all.
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-[#A58F77] mx-4 md:mx-auto max-w-[1200px] mb-[40px] md:mb-[56px] xl:mb-[37px]"></div>
+
+          {/* Three value boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[3px] xl:gap-[17px] max-w-[1200px] mx-auto px-4 xl:px-0">
+            {[
+              { title: "Resilience in", sub: "adversity" },
+              { title: "Discipline", sub: "in execution" },
+              { title: "Long-Term Vision", sub: "creating lasting value" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-[#7E6952] p-[40px] md:p-[50px] xl:px-[18px] xl:pt-[43px] xl:pb-[19px] flex flex-col justify-between min-h-[220px] md:min-h-[260px]"
+              >
+                <div>
+                  <p
+                    className="text-[16px] md:text-[20px] xl:text-[36px] text-[#E2DDDB] leading-[1.3] mb-[6px] xl:text-center"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    {item.title}
+                  </p>
+                  <p className="text-[16px] md:text-[20px] xl:text-[36px] text-white font-normal leading-[1.3] xl:text-center">
+                    {item.sub}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 mt-[30px]">
+                  <span
+                    className="text-[#A58F77] font-extrabold text-[18px] xl:text-[40px]"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    H
+                  </span>
+                  <span className="flex-1 border-t border-[#C9B99A] opacity-50"></span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+      {/* end full-page wrapper */}
 
       {/* Global Recognition */}
       <div className="bg-[#3F3B33]">
@@ -283,19 +361,19 @@ export default function AboutPage() {
                     <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] uppercase">
                       BREEAM
                     </h2>
-                    <p className="text-white text-[14px] md:text-[16px] Inter leading-[1.2]">
+                    <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] Inter leading-[1.2]">
                       World-Leading Building Sustainability Assessor{" "}
                     </p>
                   </div>
                 </div>
                 <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter">
                     Category: Sustainable building
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter">
                     Year: 2012
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter">
                     Project: The Green, University of Bradford, UK
                   </p>
                 </div>
@@ -341,7 +419,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1]">
+                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1] xl:max-w-[132px]">
                       Building Awards
                     </h2>
                   </div>
