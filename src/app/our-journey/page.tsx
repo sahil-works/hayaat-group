@@ -12,9 +12,43 @@ import international from "../../../public/assets/images/about/icon/2.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Footer from "@/components/Footer";
 
+function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        transitionDelay: `${delay}ms`,
+        transform: visible ? "translateY(0)" : "translateY(32px)",
+        opacity: visible ? 1 : 0,
+        transition: "transform 0.7s ease, opacity 0.7s ease",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function AboutPage() {
   const ref = useRef(null);
   const [show, setShow] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setHeroVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,7 +79,14 @@ export default function AboutPage() {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/20">
           <div className="container mx-auto">
-            <h1 className="pb-[100px] xl:pb-[70px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[73px] leading-[1.2] text-white max-w-[528px]">
+            <h1
+              className="pb-[100px] xl:pb-[70px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[73px] leading-[1.2] text-white max-w-[528px]"
+              style={{
+                transform: heroVisible ? "translateY(0)" : "translateY(32px)",
+                opacity: heroVisible ? 1 : 0,
+                transition: "transform 0.8s ease, opacity 0.8s ease",
+              }}
+            >
               Our Journey
             </h1>
           </div>
@@ -84,19 +125,25 @@ export default function AboutPage() {
           <div className="container relative z-10">
             <div className="flex items-start">
               <div className="xl:max-w-[1070px]">
-                <h5 className="mb-[20px] md:mb-[40px] lg:mb-[21px] text-[18px] sm:text-[25px] lg:text-[32px] xl:text-[73px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
-                  Hayaat Group,
-                  <br /> A Legacy Reimagined
-                </h5>
-                <p className="mb-[20px] md:mb-[40px] lg:mb-[24px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#E2DDDB] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
-                  From Family Enterprise to Institutional Investment Platform
-                </p>
-                <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] xl:mb-[121px] text-[18px] sm:text-[25px] lg:text-[32px] text-white sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
-                  The Hayaat story spans nearly a century — rooted in
-                  entrepreneurial discipline, shaped by resilience, and now
-                  entering a new chapter as a focused institutional investment
-                  platform.
-                </p>
+                <FadeUp delay={0}>
+                  <h5 className="mb-[20px] md:mb-[40px] lg:mb-[21px] text-[18px] sm:text-[25px] lg:text-[32px] xl:text-[73px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                    Hayaat Group,
+                    <br /> A Legacy Reimagined
+                  </h5>
+                </FadeUp>
+                <FadeUp delay={150}>
+                  <p className="mb-[20px] md:mb-[40px] lg:mb-[24px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#E2DDDB] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                    From Family Enterprise to Institutional Investment Platform
+                  </p>
+                </FadeUp>
+                <FadeUp delay={300}>
+                  <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] xl:mb-[121px] text-[18px] sm:text-[25px] lg:text-[32px] text-white sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                    The Hayaat story spans nearly a century — rooted in
+                    entrepreneurial discipline, shaped by resilience, and now
+                    entering a new chapter as a focused institutional investment
+                    platform.
+                  </p>
+                </FadeUp>
               </div>
             </div>
           </div>
