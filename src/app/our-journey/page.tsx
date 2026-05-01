@@ -12,6 +12,34 @@ import international from "../../../public/assets/images/about/icon/2.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Footer from "@/components/Footer";
 
+function FadeSlide({ children, direction = "left", delay = 0 }: { children: React.ReactNode; direction?: "left" | "right"; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        transitionDelay: `${delay}ms`,
+        transform: visible ? "translateX(0)" : direction === "left" ? "translateX(-40px)" : "translateX(40px)",
+        opacity: visible ? 1 : 0,
+        transition: "transform 0.7s ease, opacity 0.7s ease",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -158,27 +186,29 @@ export default function AboutPage() {
             {/* 1920s–1980s — LEFT */}
             <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
               <div className="md:w-1/2 md:pr-[58px] xl:pl-[48px] md:text-right xl:text-start">
-                <h2
-                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
-                  style={{ fontFamily: "var(--font-antic)" }}
-                >
-                  1920s–1980s
-                </h2>
-                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
-                  Foundations:
-                  <br />
-                  Built on Family and Enterprise
-                </h4>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[336px]">
-                  The Hayaat story begins nearly a century ago, when the Elahi
-                  family built a strong entrepreneurial foundation across real
-                  estate, hospitality, and trading.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
-                  By the 1960s, the second generation expanded into the UK,
-                  carrying forward a philosophy rooted in discipline,
-                  resilience, and long-term thinking.
-                </p>
+                <FadeSlide direction="left">
+                  <h2
+                    className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    1920s–1980s
+                  </h2>
+                  <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                    Foundations:
+                    <br />
+                    Built on Family and Enterprise
+                  </h4>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[336px]">
+                    The Hayaat story begins nearly a century ago, when the Elahi
+                    family built a strong entrepreneurial foundation across real
+                    estate, hospitality, and trading.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
+                    By the 1960s, the second generation expanded into the UK,
+                    carrying forward a philosophy rooted in discipline,
+                    resilience, and long-term thinking.
+                  </p>
+                </FadeSlide>
               </div>
               <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
                 <Image src={himg} alt="marker" width={34} height={34} />
@@ -193,27 +223,29 @@ export default function AboutPage() {
                 <Image src={himg} alt="marker" width={34} height={34} />
               </div>
               <div className="md:w-1/2 md:pl-[58px]">
-                <h2
-                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
-                  style={{ fontFamily: "var(--font-antic)" }}
-                >
-                  1990s
-                </h2>
-                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
-                  The Third Generation:
-                  <br />
-                  Built a Renewed Foundation
-                </h4>
-                <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[336px]">
-                  For Mohammed Ikhlaq (MI), the journey was not simply inherited
-                  — it was forged. After building strong experience in global
-                  oil services, working on large-scale international projects,
-                  he decided to craft his own path.
-                </p>
-                <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
-                  That moment became the turning point. He chose to rebuild —
-                  from the ground up
-                </p>
+                <FadeSlide direction="right">
+                  <h2
+                    className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    1990s
+                  </h2>
+                  <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                    The Third Generation:
+                    <br />
+                    Built a Renewed Foundation
+                  </h4>
+                  <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[336px]">
+                    For Mohammed Ikhlaq (MI), the journey was not simply inherited
+                    — it was forged. After building strong experience in global
+                    oil services, working on large-scale international projects,
+                    he decided to craft his own path.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
+                    That moment became the turning point. He chose to rebuild —
+                    from the ground up
+                  </p>
+                </FadeSlide>
               </div>
             </div>
 
@@ -225,29 +257,31 @@ export default function AboutPage() {
             {/* 1995–2008 — LEFT */}
             <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
               <div className="md:w-1/2 md:pr-[58px] xl:pl-[48px] md:text-right xl:text-start">
-                <h2
-                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
-                  style={{ fontFamily: "var(--font-antic)" }}
-                >
-                  1995–2008
-                </h2>
-                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
-                  Building the Core:
-                  <br />
-                  Oil &amp; Gas Platform
-                </h4>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
-                  MI founded an oil & gas platform in the GCC, starting small
-                  but growing rapidly through execution, trust, and consistency.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
-                  The business became part of major regional developments,
-                  establishing a reputation for reliability and delivery.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[368px]">
-                  This phase laid the foundation for Hayaat — built not on
-                  opportunity alone, but on hard work, values, and credibility.
-                </p>
+                <FadeSlide direction="left">
+                  <h2
+                    className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    1995–2008
+                  </h2>
+                  <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                    Building the Core:
+                    <br />
+                    Oil &amp; Gas Platform
+                  </h4>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
+                    MI founded an oil & gas platform in the GCC, starting small
+                    but growing rapidly through execution, trust, and consistency.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
+                    The business became part of major regional developments,
+                    establishing a reputation for reliability and delivery.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[368px]">
+                    This phase laid the foundation for Hayaat — built not on
+                    opportunity alone, but on hard work, values, and credibility.
+                  </p>
+                </FadeSlide>
               </div>
               <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
                 <Image src={himg} alt="marker" width={34} height={34} />
@@ -262,64 +296,68 @@ export default function AboutPage() {
                 <Image src={himg} alt="marker" width={34} height={34} />
               </div>
               <div className="md:w-1/2 md:pl-[58px]">
-                <h2
-                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
-                  style={{ fontFamily: "var(--font-antic)" }}
-                >
-                  2005–2021
-                </h2>
-                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
-                  From Operator to Investor:
-                  <br />
-                  Expanding the Platform
-                </h4>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
-                  With a strong operating base, MI established Hayaat Group to
-                  expand beyond a single sector and geography.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
-                  Expansion into new markets, including Africa.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
-                  Entry into real estate and asset development.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
-                  Gradual move into early-stage and venture investments
-                  globally.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[354px]">
-                  Hayaat evolved into a diversified platform — combining
-                  operational expertise with investment acumen.
-                </p>
+                <FadeSlide direction="right">
+                  <h2
+                    className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    2005–2021
+                  </h2>
+                  <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                    From Operator to Investor:
+                    <br />
+                    Expanding the Platform
+                  </h4>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                    With a strong operating base, MI established Hayaat Group to
+                    expand beyond a single sector and geography.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                    Expansion into new markets, including Africa.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                    Entry into real estate and asset development.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[354px]">
+                    Gradual move into early-stage and venture investments
+                    globally.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[354px]">
+                    Hayaat evolved into a diversified platform — combining
+                    operational expertise with investment acumen.
+                  </p>
+                </FadeSlide>
               </div>
             </div>
 
             {/* 2022+ — LEFT */}
             <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">
               <div className="md:w-1/2 md:pr-[58px] xl:pl-[48px] md:text-right xl:text-start">
-                <h2
-                  className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
-                  style={{ fontFamily: "var(--font-antic)" }}
-                >
-                  2022+
-                </h2>
-                <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
-                  Institutionalising for the Future: A Platform for Impact
-                </h4>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
-                  Hayaat is entering its next phase — institutionalising its
-                  investment platform and sharpening its focus on direct
-                  investments.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
-                  Moving beyond capital to become a value-creation partner.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
-                  Building long-term platforms in core sectors.
-                </p>
-                <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[400px]">
-                  Delivering sustainable growth across key markets.
-                </p>
+                <FadeSlide direction="left">
+                  <h2
+                    className="text-[40px] md:text-[55px] lg:text-[65px] xl:text-[73px] text-[#3F3B33] leading-[1] mb-[15px]"
+                    style={{ fontFamily: "var(--font-antic)" }}
+                  >
+                    2022+
+                  </h2>
+                  <h4 className="text-[18px] md:text-[22px] xl:text-[36px] text-[#3F3B33] mb-[20px] xl:mb-[34px] leading-[1.3]">
+                    Institutionalising for the Future: A Platform for Impact
+                  </h4>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
+                    Hayaat is entering its next phase — institutionalising its
+                    investment platform and sharpening its focus on direct
+                    investments.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
+                    Moving beyond capital to become a value-creation partner.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[400px]">
+                    Building long-term platforms in core sectors.
+                  </p>
+                  <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[400px]">
+                    Delivering sustainable growth across key markets.
+                  </p>
+                </FadeSlide>
               </div>
               <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[10px] xl:top-0 z-10">
                 <Image src={himg} alt="marker" width={34} height={34} />
@@ -335,13 +373,15 @@ export default function AboutPage() {
 
           {/* Quote text */}
           <div className="text-center px-4 mb-[40px] md:mb-[56px]">
-            <p
-              className="text-[18px] md:text-[22px] lg:text-[26px] xl:text-[36px] text-[#3F3B33] leading-[1.5] max-w-[700px] xl:max-w-[950px] mx-auto"
-              style={{ fontFamily: "var(--font-antic)" }}
-            >
-              As the next generation begins to step forward, Hayaat continues to
-              build on the same principles that started it all.
-            </p>
+            <FadeUp>
+              <p
+                className="text-[18px] md:text-[22px] lg:text-[26px] xl:text-[36px] text-[#3F3B33] leading-[1.5] max-w-[700px] xl:max-w-[950px] mx-auto"
+                style={{ fontFamily: "var(--font-antic)" }}
+              >
+                As the next generation begins to step forward, Hayaat continues to
+                build on the same principles that started it all.
+              </p>
+            </FadeUp>
           </div>
 
           {/* Divider */}
@@ -354,8 +394,8 @@ export default function AboutPage() {
               { title: "Discipline", sub: "in execution" },
               { title: "Long-Term Vision", sub: "creating lasting value" },
             ].map((item, i) => (
+              <FadeUp key={i} delay={i * 150}>
               <div
-                key={i}
                 className="bg-[#7E6952] p-[40px] md:p-[50px] xl:px-[18px] xl:pt-[43px] xl:pb-[19px] flex flex-col justify-between min-h-[220px] md:min-h-[260px]"
               >
                 <div>
@@ -379,6 +419,7 @@ export default function AboutPage() {
                   <span className="flex-1 border-t border-[#C9B99A] opacity-50"></span>
                 </div>
               </div>
+              </FadeUp>
             ))}
           </div>
         </div>
