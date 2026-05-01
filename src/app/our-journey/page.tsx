@@ -13,14 +13,24 @@ import jouneyGlobal from "../../../public/assets/images/about/journey-global.png
 import leafe from "../../../public/assets/images/leafe.png";
 import Footer from "@/components/Footer";
 
-function FadeSlide({ children, direction = "left", delay = 0 }: { children: React.ReactNode; direction?: "left" | "right"; delay?: number }) {
+function FadeSlide({
+  children,
+  direction = "left",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  direction?: "left" | "right";
+  delay?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.15 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -31,7 +41,11 @@ function FadeSlide({ children, direction = "left", delay = 0 }: { children: Reac
       ref={ref}
       style={{
         transitionDelay: `${delay}ms`,
-        transform: visible ? "translateX(0)" : direction === "left" ? "translateX(-40px)" : "translateX(40px)",
+        transform: visible
+          ? "translateX(0)"
+          : direction === "left"
+            ? "translateX(-40px)"
+            : "translateX(40px)",
         opacity: visible ? 1 : 0,
         transition: "transform 0.7s ease, opacity 0.7s ease",
       }}
@@ -41,14 +55,22 @@ function FadeSlide({ children, direction = "left", delay = 0 }: { children: Reac
   );
 }
 
-function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FadeUp({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.15 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -65,6 +87,172 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
       }}
     >
       {children}
+    </div>
+  );
+}
+
+const awards = [
+  {
+    title: "BREEAM",
+    subtitle: "World-Leading Building Sustainability Assessor",
+    category: "Sustainable building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "uppercase",
+  },
+  {
+    title: "International Green Apple Awards",
+    subtitle: "",
+    category: "Environmental best practice in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+  {
+    title: "Building Awards",
+    subtitle: "",
+    category: "Recognition of excellence in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+  {
+    title: "Awards",
+    subtitle: "",
+    category: "Recognition of excellence in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+];
+
+function GlobalRecognition() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleUp = () => {
+    setActiveIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleDown = () => {
+    setActiveIndex((prev) => Math.min(awards.length - 3, prev + 1));
+  };
+
+  return (
+    <div className="bg-[#3F3B33] relative">
+      {/* Up arrow — desktop only */}
+      <div
+        className="hidden xl:flex absolute top-[260px] right-[360px] z-10 cursor-pointer"
+        onClick={handleUp}
+      >
+        <Image src={upArrow} alt="scroll up" width={55} height={55} />
+      </div>
+      {/* Down arrow — desktop only */}
+      <div
+        className="hidden xl:flex absolute bottom-[236px] right-[326px] z-10 cursor-pointer"
+        onClick={handleDown}
+      >
+        <Image src={downArrow} alt="scroll down" width={75} height={75} />
+      </div>
+
+      <div className="container custompl border-l-[1.8px] border-[#A58F77]">
+        <div className="md:pl-[80px] py-[75px] xl:pb-[200px]">
+          <h2 className="pl-[20px] text-[35px] md:text-[53px] lg:text-[72px] text-[#BFAF9D] mb-[40px]">
+            Global Recognition
+          </h2>
+
+          {/* Mobile/tablet: show all items */}
+          <div className="xl:hidden">
+            {awards.map((award, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px] border-b-[1px] border-[#A58F77] md:border-0 last:border-0"
+              >
+                <div className="md:flex items-center flex-wrap">
+                  <div className="md:w-[50%]">
+                    <Image
+                      src={jouneyGlobal}
+                      alt="award image"
+                      style={{ width: "284", height: "174" }}
+                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0"
+                    />
+                  </div>
+                  <div className="pl-0 md:pl-[31px] md:w-[50%]">
+                    <h2 className={`text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}>
+                      {award.title}
+                    </h2>
+                    {award.subtitle && (
+                      <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] Inter leading-[1.2] font-light">
+                        {award.subtitle}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px] border-[#A58F77] pt-[11px] pb-[20px]">
+                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
+                    Category: {award.category}
+                  </p>
+                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
+                    Year: {award.year}
+                  </p>
+                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
+                    Project: {award.project}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: vertical slider — 3 items visible at a time */}
+          <div className="hidden xl:block overflow-hidden" style={{ height: "780px" }}>
+            <div
+              style={{
+                transform: `translateY(-${activeIndex * 260}px)`,
+                transition: "transform 0.6s cubic-bezier(0.4,0,0.2,1)",
+              }}
+            >
+              {awards.map((award, i) => (
+                <div
+                  key={i}
+                  className="grid grid-cols-2 items-center mb-0"
+                  style={{ height: "260px" }}
+                >
+                  <div className="flex items-center flex-wrap">
+                    <div className="w-[50%]">
+                      <Image
+                        src={jouneyGlobal}
+                        alt="award image"
+                        style={{ width: "284", height: "174" }}
+                        className="w-[284px] h-auto"
+                      />
+                    </div>
+                    <div className="pl-[31px] w-[50%]">
+                      <h2 className={`text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}>
+                        {award.title}
+                      </h2>
+                      {award.subtitle && (
+                        <p className="text-white text-[19px] Inter leading-[1.2] font-light mt-[8px]">
+                          {award.subtitle}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="pl-[32px] ml-[32px] border-l-[1.8px] border-[#A58F77] pt-[11px] pb-[20px]">
+                    <p className="text-white text-[19px] mb-[3px] leading-[1.2] Inter font-light">
+                      Category: {award.category}
+                    </p>
+                    <p className="text-white text-[19px] mb-[3px] leading-[1.2] Inter font-light">
+                      Year: {award.year}
+                    </p>
+                    <p className="text-white text-[19px] mb-[3px] leading-[1.2] Inter font-light">
+                      Project: {award.project}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -237,10 +425,10 @@ export default function AboutPage() {
                     Built a Renewed Foundation
                   </h4>
                   <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] mb-[15px] xl:max-w-[336px]">
-                    For Mohammed Ikhlaq (MI), the journey was not simply inherited
-                    — it was forged. After building strong experience in global
-                    oil services, working on large-scale international projects,
-                    he decided to craft his own path.
+                    For Mohammed Ikhlaq (MI), the journey was not simply
+                    inherited — it was forged. After building strong experience
+                    in global oil services, working on large-scale international
+                    projects, he decided to craft his own path.
                   </p>
                   <p className="text-[13px] md:text-[14px] xl:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[336px]">
                     That moment became the turning point. He chose to rebuild —
@@ -252,7 +440,11 @@ export default function AboutPage() {
 
             {/* Timeline label */}
             <div className="relative flex justify-center mb-[60px] md:mb-[80px]">
-              <Image src={journey} alt="The Journey: A Timeline" className="w-auto" />
+              <Image
+                src={journey}
+                alt="The Journey: A Timeline"
+                className="w-auto"
+              />
             </div>
 
             {/* 1995–2008 — LEFT */}
@@ -272,7 +464,8 @@ export default function AboutPage() {
                   </h4>
                   <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
                     MI founded an oil & gas platform in the GCC, starting small
-                    but growing rapidly through execution, trust, and consistency.
+                    but growing rapidly through execution, trust, and
+                    consistency.
                   </p>
                   <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] mb-[16px] xl:max-w-[368px]">
                     The business became part of major regional developments,
@@ -280,7 +473,8 @@ export default function AboutPage() {
                   </p>
                   <p className="text-[13px] md:text-[14px] lg:text-[18px] text-[#7E6952] leading-[1.7] xl:max-w-[368px]">
                     This phase laid the foundation for Hayaat — built not on
-                    opportunity alone, but on hard work, values, and credibility.
+                    opportunity alone, but on hard work, values, and
+                    credibility.
                   </p>
                 </FadeSlide>
               </div>
@@ -379,8 +573,8 @@ export default function AboutPage() {
                 className="text-[18px] md:text-[22px] lg:text-[26px] xl:text-[36px] text-[#3F3B33] leading-[1.5] max-w-[700px] xl:max-w-[950px] mx-auto"
                 style={{ fontFamily: "var(--font-antic)" }}
               >
-                As the next generation begins to step forward, Hayaat continues to
-                build on the same principles that started it all.
+                As the next generation begins to step forward, Hayaat continues
+                to build on the same principles that started it all.
               </p>
             </FadeUp>
           </div>
@@ -396,30 +590,28 @@ export default function AboutPage() {
               { title: "Long-Term Vision", sub: "creating lasting value" },
             ].map((item, i) => (
               <FadeUp key={i} delay={i * 150}>
-              <div
-                className="bg-[#7E6952] p-[40px] md:p-[50px] xl:px-[18px] xl:pt-[43px] xl:pb-[19px] flex flex-col justify-between min-h-[220px] md:min-h-[260px]"
-              >
-                <div>
-                  <p
-                    className="text-[16px] md:text-[20px] xl:text-[36px] text-[#E2DDDB] leading-[1.3] mb-[6px] xl:text-center"
-                    style={{ fontFamily: "var(--font-antic)" }}
-                  >
-                    {item.title}
-                  </p>
-                  <p className="text-[16px] md:text-[20px] xl:text-[36px] text-white font-normal leading-[1.3] xl:text-center">
-                    {item.sub}
-                  </p>
+                <div className="bg-[#7E6952] p-[40px] md:p-[50px] xl:px-[18px] xl:pt-[43px] xl:pb-[19px] flex flex-col justify-between min-h-[220px] md:min-h-[260px]">
+                  <div>
+                    <p
+                      className="text-[16px] md:text-[20px] xl:text-[36px] text-[#E2DDDB] leading-[1.3] mb-[6px] xl:text-center"
+                      style={{ fontFamily: "var(--font-antic)" }}
+                    >
+                      {item.title}
+                    </p>
+                    <p className="text-[16px] md:text-[20px] xl:text-[36px] text-white font-normal leading-[1.3] xl:text-center">
+                      {item.sub}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 mt-[30px]">
+                    <span
+                      className="text-[#A58F77] font-extrabold text-[18px] xl:text-[40px]"
+                      style={{ fontFamily: "var(--font-antic)" }}
+                    >
+                      H
+                    </span>
+                    <span className="flex-1 border-t border-[#C9B99A] opacity-50"></span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 mt-[30px]">
-                  <span
-                    className="text-[#A58F77] font-extrabold text-[18px] xl:text-[40px]"
-                    style={{ fontFamily: "var(--font-antic)" }}
-                  >
-                    H
-                  </span>
-                  <span className="flex-1 border-t border-[#C9B99A] opacity-50"></span>
-                </div>
-              </div>
               </FadeUp>
             ))}
           </div>
@@ -428,107 +620,7 @@ export default function AboutPage() {
       {/* end full-page wrapper */}
 
       {/* Global Recognition */}
-      <div className="bg-[#3F3B33]">
-        <div className="container custompl border-l-[1.8px] border-[#A58F77]">
-          <div className="md:pl-[80px] py-[75px] xl:pb-[200px]">
-            <h2 className="pl-[20px]  text-[35px] md:text-[53px] lg:text-[72px] text-[#BFAF9D] mb-[40px]">
-              Global Recognition
-            </h2>
-            <div className="">
-              {/* 1 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px] border-b-[1px] border-[#A58F77] md:border-0">
-                <div className=" md:flex items-center flex-wrap">
-                  <div className="md:w-[50%]">
-                    <Image
-                      src={jouneyGlobal}
-                      alt="hero image"
-                      style={{ width: "284", height: "174" }}
-                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0 "
-                    />
-                  </div>
-                  <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] uppercase">
-                      BREEAM
-                    </h2>
-                    <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] Inter leading-[1.2] font-light">
-                      World-Leading Building Sustainability Assessor{" "}
-                    </p>
-                  </div>
-                </div>
-                <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
-                    Category: Sustainable building
-                  </p>
-                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
-                    Year: 2012
-                  </p>
-                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
-                    Project: The Green, University of Bradford, UK
-                  </p>
-                </div>
-              </div>
-              {/* 2 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px]  border-b-[1px] border-[#A58F77] md:border-0">
-                <div className=" md:flex items-center flex-wrap">
-                  <div className="md:w-[50%]">
-                    <Image
-                      src={jouneyGlobal}
-                      alt="hero image"
-                      style={{ width: "284", height: "174" }}
-                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0 "
-                    />
-                  </div>
-                  <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D]  leading-[1]">
-                      International Green Apple Awards
-                    </h2>
-                  </div>
-                </div>
-                <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
-                    Category: Environmental best practice in building
-                  </p>
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
-                    Year: 2012
-                  </p>
-                  <p className="text-white text-[14px] md:text-[16px] leading-[1.2] Inter font-light">
-                    ProjectProject: The Green, University of Bradford, UK
-                  </p>
-                </div>
-              </div>
-              {/* 3 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-[25px] md:mb-[40px] lg:mb-[72px]">
-                <div className=" md:flex items-center flex-wrap">
-                  <div className="md:w-[50%]">
-                    <Image
-                      src={jouneyGlobal}
-                      alt="hero image"
-                      style={{ width: "284", height: "174" }}
-                      className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0"
-                    />
-                  </div>
-                  <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1] xl:max-w-[132px]">
-                      Building Awards
-                    </h2>
-                  </div>
-                </div>
-                <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
-                    Category: Recognition of excellence in building
-                  </p>
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
-                    Year: 2012
-                  </p>
-                  <p className="text-white text-[14px] md:text-[16px] leading-[1.2] Inter font-light">
-                    ProjectProject: The Green, University of Bradford, UK{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <GlobalRecognition />
       <Footer />
     </main>
   );
