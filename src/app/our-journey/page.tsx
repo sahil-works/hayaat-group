@@ -329,7 +329,7 @@ export default function AboutPage() {
             ></span>
             {/* Animated vertical line — starts below the leaf */}
             <span
-              className={`absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] origin-top transition-all duration-[8000ms] ease-in-out
+              className={`absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] origin-top transition-all duration-[40000ms] ease-in-out
                 ${show ? "h-full" : "h-0"}`}
               style={{ top: "99px" }}
             ></span>
