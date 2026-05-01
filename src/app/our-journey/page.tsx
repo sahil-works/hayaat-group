@@ -6,9 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import hero from "../../../public/assets/images/about/our-jorney-new.png";
 import himg from "../../../public/assets/images/about/h-name.svg";
 import journey from "../../../public/assets/images/about/journey.jpeg";
+import upArrow from "../../../public/assets/images/about/up-arrow.svg";
+import downArrow from "../../../public/assets/images/about/down-arrow.svg";
 import looking from "../../../public/assets/images/about/looking.jpeg";
-import breeam from "../../../public/assets/images/about/icon/1.png";
-import international from "../../../public/assets/images/about/icon/2.png";
+import jouneyGlobal from "../../../public/assets/images/about/journey-global.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Footer from "@/components/Footer";
 
@@ -429,7 +430,7 @@ export default function AboutPage() {
       {/* Global Recognition */}
       <div className="bg-[#3F3B33]">
         <div className="container custompl border-l-[1.8px] border-[#A58F77]">
-          <div className="md:pl-[80px] py-[75px]">
+          <div className="md:pl-[80px] py-[75px] xl:pb-[200px]">
             <h2 className="pl-[20px]  text-[35px] md:text-[53px] lg:text-[72px] text-[#BFAF9D] mb-[40px]">
               Global Recognition
             </h2>
@@ -439,7 +440,7 @@ export default function AboutPage() {
                 <div className=" md:flex items-center flex-wrap">
                   <div className="md:w-[50%]">
                     <Image
-                      src={breeam}
+                      src={jouneyGlobal}
                       alt="hero image"
                       style={{ width: "284", height: "174" }}
                       className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0 "
@@ -449,19 +450,19 @@ export default function AboutPage() {
                     <h2 className="text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] uppercase">
                       BREEAM
                     </h2>
-                    <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] Inter leading-[1.2]">
+                    <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] Inter leading-[1.2] font-light">
                       World-Leading Building Sustainability Assessor{" "}
                     </p>
                   </div>
                 </div>
                 <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
                     Category: Sustainable building
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
                     Year: 2012
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px]  xl:text-[19px] mb-[3px] leading-[1.2] Inter font-light">
                     Project: The Green, University of Bradford, UK
                   </p>
                 </div>
@@ -471,7 +472,7 @@ export default function AboutPage() {
                 <div className=" md:flex items-center flex-wrap">
                   <div className="md:w-[50%]">
                     <Image
-                      src={international}
+                      src={jouneyGlobal}
                       alt="hero image"
                       style={{ width: "284", height: "174" }}
                       className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0 "
@@ -484,13 +485,13 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
                     Category: Environmental best practice in building
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
                     Year: 2012
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] leading-[1.2] Inter font-light">
                     ProjectProject: The Green, University of Bradford, UK
                   </p>
                 </div>
@@ -500,7 +501,7 @@ export default function AboutPage() {
                 <div className=" md:flex items-center flex-wrap">
                   <div className="md:w-[50%]">
                     <Image
-                      src={international}
+                      src={jouneyGlobal}
                       alt="hero image"
                       style={{ width: "284", height: "174" }}
                       className="w-[120px] sm:w-[230px] lg:w-[284px] h-auto mb-[10px] md:mb-0"
@@ -513,13 +514,13 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="pl-0 md:pl-[32px] md:ml-[32px] border-l-[1.8px]  border-[#A58F77] pt-[11px] pb-[20px]">
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
                     Category: Recognition of excellence in building
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] mb-[3px] leading-[1.2] Inter font-light">
                     Year: 2012
                   </p>
-                  <p className="text-white text-[14px] md:text-[16px] leading-[1.2] Inter">
+                  <p className="text-white text-[14px] md:text-[16px] leading-[1.2] Inter font-light">
                     ProjectProject: The Green, University of Bradford, UK{" "}
                   </p>
                 </div>
