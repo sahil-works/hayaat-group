@@ -259,12 +259,32 @@ function GlobalRecognition() {
 
 export default function AboutPage() {
   const ref = useRef(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
   const [show, setShow] = useState(false);
   const [heroVisible, setHeroVisible] = useState(false);
+  const [lineProgress, setLineProgress] = useState(0);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 100);
     return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = timelineRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      // start drawing when top of section hits bottom of viewport
+      // finish when bottom of section hits top of viewport
+      const total = rect.height + windowH;
+      const scrolled = windowH - rect.top;
+      const progress = Math.min(Math.max(scrolled / total, 0), 1);
+      setLineProgress(progress * 100);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -368,9 +388,17 @@ export default function AboutPage() {
 
         {/* Timeline section */}
         <div className="py-[60px] md:py-[100px] xl:pt-[143px] xl:pb-[79px] bg-white">
-          <div className="container mx-auto px-4 relative">
-            {/* Vertical center line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-[1.5px] bg-[#C9B99A] -translate-x-1/2 hidden md:block"></div>
+          <div ref={timelineRef} className="container mx-auto px-4 relative">
+            {/* Vertical center line — draws with scroll */}
+            <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 hidden md:block w-[1.5px] overflow-hidden">
+              <div
+                className="w-full bg-[#C9B99A] origin-top"
+                style={{
+                  height: `${lineProgress}%`,
+                  transition: "height 0.1s linear",
+                }}
+              ></div>
+            </div>
 
             {/* 1920s–1980s — LEFT */}
             <div className="relative flex flex-col md:flex-row items-start mb-[60px] md:mb-[80px]">

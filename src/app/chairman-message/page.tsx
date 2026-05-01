@@ -27,18 +27,18 @@ export default function ChairmanMessagePage() {
   return (
     <main>
       {/* Hero */}
-      <div className="relative">
+      <div className="relative h-[492px] xl:h-auto">
         <div className="image w-full">
           <Image
             src={hero}
             alt="hero image"
             style={{ width: "100%", height: "810" }}
-            className="block h-[500px] md:h-[90vh] xl:h-auto"
+            className="block h-[500px] md:h-[90vh] xl:h-auto object-cover"
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-black/20">
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-end bg-gradient-to-t from-black/60 to-transparent">
           <div className="container mx-auto ">
-            <h1 className="pb-[100px] xl:pb-[210px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
+            <h1 className="pb-[38px] lg:pb-[100px] xl:pb-[210px] ml-[20px] md:ml-[90px] block text-[35px] sm:text-[50px] md:text-[55px] xl:text-[70px] leading-[1.2] text-white max-w-[528px]">
               Message from
               <br />
               the Chairman
