@@ -216,7 +216,7 @@ export default function FutureInFocus({ canStart = false }: Props) {
         <div className="container  border-[#A58F77] border-l-[1.8px] relative">
           <div className="sm:pl-[60px] xl:pl-[120px] pt-[60px] md:pt-[80px] xl:pt-[87px] pb-[79px] xl:pb-[83px]">
             <p className="font-normal text-3xl sm:text-4xl text-[#3F3B33]">
-              Strategic framework
+              Strategic Framework
             </p>
             <h2 className="mt-2 font-normal text-[38px] md:text-[48px] lg:text-[73px] text-[#3F3B33]">
               Our Four Investment Verticals
