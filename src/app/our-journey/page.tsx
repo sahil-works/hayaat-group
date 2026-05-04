@@ -177,7 +177,9 @@ function GlobalRecognition() {
                     />
                   </div>
                   <div className="pl-0 md:pl-[31px] md:w-[50%]">
-                    <h2 className={`text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}>
+                    <h2
+                      className={`text-[25px] md:text-[28px] lg:text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}
+                    >
                       {award.title}
                     </h2>
                     {award.subtitle && (
@@ -203,7 +205,10 @@ function GlobalRecognition() {
           </div>
 
           {/* Desktop: vertical slider — 3 items visible at a time */}
-          <div className="hidden xl:block overflow-hidden" style={{ height: "780px" }}>
+          <div
+            className="hidden xl:block overflow-hidden"
+            style={{ height: "780px" }}
+          >
             <div
               style={{
                 transform: `translateY(-${activeIndex * 260}px)`,
@@ -226,7 +231,9 @@ function GlobalRecognition() {
                       />
                     </div>
                     <div className="pl-[31px] w-[50%]">
-                      <h2 className={`text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}>
+                      <h2
+                        className={`text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}
+                      >
                         {award.title}
                       </h2>
                       {award.subtitle && (
@@ -348,10 +355,16 @@ export default function AboutPage() {
               style={{ top: "99px" }}
             ></span>
             {/* Animated vertical line — starts below the leaf */}
-            <span
-              className={`absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] origin-top transition-all duration-[40000ms] ease-in-out
+            {/* <span
+              className={`absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] origin-top transition-all duration-[80000ms] ease-in-out
                 ${show ? "h-full" : "h-0"}`}
               style={{ top: "99px" }}
+            ></span> */}
+            <span
+              className={`absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] 
+  origin-top transform transition-transform duration-[100000ms] ease-linear
+  ${show ? "scale-y-100" : "scale-y-0"}`}
+              style={{ top: "99px", height: "100%" }}
             ></span>
           </div>
         </div>

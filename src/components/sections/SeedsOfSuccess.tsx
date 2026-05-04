@@ -95,7 +95,7 @@ export default function SeedsOfSuccess() {
                 </p>
                 {/* Right extending line */}
                 <span
-                  className={`block h-[1.5px] bg-[#A58F77] xl:mt-[26px] flex-1 xl:mr-[348px] origin-left ${show ? "animate-lineX" : "scale-x-0"}`}
+                  className={`block h-[1.5px] bg-[#A58F77] xl:mt-[26px] flex-1 origin-left ${show ? "animate-lineX" : "scale-x-0"}`}
                 />
               </div>
             </div>
