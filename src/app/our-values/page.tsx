@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import hero from "../../../public/assets/images/about/our-values.jpeg";
 import pillar from "../../../public/assets/images/about/Pillar.png";
 import leafe from "../../../public/assets/images/leafe.png";
@@ -26,6 +27,20 @@ const dnaItems = [
 ];
 
 export default function AboutPage() {
+  const ref = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setShow(true);
+      },
+      { threshold: 0.05 },
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main>
       {/* Hero */}
@@ -47,18 +62,36 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Hayaat DNA */}
-      <div className="bg-[#BFAF9D] pillarBlock">
-        <div className="container  custompl border-l-[1.8px] border-[#A58F77] relative">
-          <Image
-            src={leafe}
-            alt="leafe"
-            width={73}
-            height={113}
-            className="absolute top-[70px] left-0 md:-left-[36px] z-20 hidden md:block"
-          />
-          <span className="absolute top-0 -left-[36px] bg-[#BFAF9D] w-[75px] h-[183px] z-10 hidden md:block"></span>
-          <div className="grid grid-cols-1 md:grid-cols-[1fr,332px] items-center ">
+      {/* Hayaat DNA — leaf + animated line wrapper */}
+      <div ref={ref} className="relative bg-[#BFAF9D] pillarBlock">
+        {/* Leaf + animated vertical line */}
+        <div className="hidden md:block absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-20">
+          <div className="container mx-auto h-full relative">
+            <Image
+              src={leafe}
+              alt="leafe"
+              width={73}
+              height={113}
+              className="absolute -left-[36px] z-20"
+              style={{ top: "70px" }}
+            />
+            <span
+              className="absolute -left-[36px] bg-[#BFAF9D] w-[75px] h-[183px] z-10"
+              style={{ top: "0px" }}
+            ></span>
+            <span
+              className="absolute left-0 w-[1px] border-l-[1.8px] border-[#A58F77] origin-top transform transition-transform duration-[30000ms] ease-linear"
+              style={{
+                top: "183px",
+                height: "calc(100% - 183px)",
+                transform: show ? "scaleY(1)" : "scaleY(0)",
+              }}
+            ></span>
+          </div>
+        </div>
+
+        <div className="container custompl relative">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr,332px] items-center">
             <div className="">
               <h2 className="md:pl-[124px] font-antic text-[rgb(63,59,51)] text-[36px] md:text-[40px] lg:text-[64px] xl:text-[72px] mb-[20px] md:mb-[35px] xl:mb-0 mt-7 lg:mt-10 xl:mt-0">
                 The Hayaat DNA
