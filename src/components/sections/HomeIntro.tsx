@@ -60,13 +60,13 @@ export default function HomeIntro({ onLineFinish }: Props) {
             <span className="absolute top-0  -left-[36px]  bg-[#3F3B33]  w-[75px] h-[130px] z-10 hidden sm:block"></span>
 
             <div className="max-w-[950px] xl:ml-[66px]">
-              <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">
+              <p className="text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px] xl:text-center">
                 We are the Hayaat Group, a reputed, global principal investment
                 firm creating and accelerating growth through talent, integrity
                 and respect.
               </p>
 
-              <p className="mt-[32px] sm:mt-[48px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px]">
+              <p className="mt-[32px] sm:mt-[48px] text-[18px] sm:text-[25px] lg:text-[31px] text-[#BFAF9D] sm:pl-[90px] xl:text-center">
                 We work with people who share our passion for success, and
                 accelerate value creation through capital, capabilities, and
                 experience.

@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="pt-[40px] sm:pt-[80px] lg:pt-[130px] pl-0 md:pl-[50px] sm:pb-[40px] lg:pb-[60px] xl:pb-[145px] lg:pl-[70px]">
           <div className=" grid grid-cols-1  sm:grid-cols-2 md:grid-cols-[.5fr,1fr] xl:grid-cols-2 gap-[30px] sm:gap-0  xl:gap-[50px]">
             <div className="item">
-              <div className="logo">
+              <div className="logo xl:pt-[70px]">
                 <div className="image">
                   <Link href="/" className="inline-block">
                     <Image
@@ -124,16 +124,16 @@ export default function Footer() {
                   Dubai, United Arab Emirates
                 </p> */}
 
-                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                <p className="text-white text-[16px] xl:text-[19px] font-light">
                   Office 3207, HDS Tower,
                 </p>
-                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                <p className="text-white text-[16px] xl:text-[19px] font-light">
                   Cluster F, JLT
                 </p>
-                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                <p className="text-white text-[16px] xl:text-[19px] font-light">
                   PO Box 390544
                 </p>
-                <p className="text-white text-[16px] xl:text-[28px] font-light">
+                <p className="text-white text-[16px] xl:text-[19px] font-light">
                   Dubai, United Arab Emirates
                 </p>
 
@@ -141,7 +141,7 @@ export default function Footer() {
                   <li className="mb-[5px] mt-[26px]">
                     <Link
                       href="tel:+971 4 513 4951"
-                      className="text-white text-[16px] xl:text-[28px] mb-[7px] Inter font-light"
+                      className="text-white text-[16px] xl:text-[19px] mb-[7px] Inter font-light"
                     >
                       Tel: +971 4 513 4951
                     </Link>
@@ -149,7 +149,7 @@ export default function Footer() {
                   <li className="mb-[5px]">
                     <Link
                       href="tel:+971 4 513 4936"
-                      className="text-white text-[16px] mb-[7px]  xl:text-[28px] Inter font-light"
+                      className="text-white text-[16px] mb-[7px]  xl:text-[19px] Inter font-light"
                     >
                       Fax: +971 4 513 4936
                     </Link>
@@ -157,7 +157,7 @@ export default function Footer() {
                   <li className="mb-[5px]">
                     <Link
                       href="mailto:info@hayaatgroup.com"
-                      className="text-white text-[16px] xl:text-[28px] mb-[7px] Inter font-light"
+                      className="text-white text-[16px] xl:text-[19px] mb-[7px] Inter font-light"
                     >
                       E-mail: info@hayaatgroup.com
                     </Link>
