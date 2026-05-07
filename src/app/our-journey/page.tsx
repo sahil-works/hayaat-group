@@ -117,7 +117,39 @@ const awards = [
     titleClass: "",
   },
   {
-    title: "Awards",
+    title: "Industry Awards, (Yorkshire)",
+    subtitle: "",
+    category: "Recognition of excellence in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+  {
+    title: "Greenbuild Awards (winner)",
+    subtitle: "",
+    category: "Recognition of excellence in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+  {
+    title: "Consider Constructors (Gold)",
+    subtitle: "",
+    category: "Recognition of excellence in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+  {
+    title: "Building Excellence Awards",
+    subtitle: "",
+    category: "Recognition of excellence in building",
+    year: "2012",
+    project: "The Green, University of Bradford, UK",
+    titleClass: "",
+  },
+  {
+    title: "Best Built in Quality Award",
     subtitle: "",
     category: "Recognition of excellence in building",
     year: "2012",
@@ -230,7 +262,7 @@ function GlobalRecognition() {
                         className="w-[284px] h-auto"
                       />
                     </div>
-                    <div className="pl-[31px] w-[50%]">
+                    <div className="pl-[31px] w-[50%] xl:w-[44%]">
                       <h2
                         className={`text-[36px] text-[#BFAF9D] leading-[1] ${award.titleClass}`}
                       >
@@ -374,20 +406,20 @@ export default function AboutPage() {
           <span className="w-full h-[380px] sm:h-[665px] bg-[#7E6952] absolute top-0 left-0 right-0 -z-[1]"></span>
           <div className="container relative z-10">
             <div className="flex items-start">
-              <div className="xl:max-w-[1070px]">
+              <div className="xl:max-w-[1224px]">
                 <FadeUp delay={0}>
-                  <h5 className="mb-[20px] md:mb-[40px] lg:mb-[21px] text-[18px] sm:text-[25px] lg:text-[32px] xl:text-[73px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                  <h5 className="mb-[20px] md:mb-[40px] lg:mb-[21px] text-[18px] sm:text-[25px] lg:text-[32px] xl:text-[73px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px] xl:text-center">
                     Hayaat Group,
                     <br /> A Legacy Reimagined
                   </h5>
                 </FadeUp>
                 <FadeUp delay={150}>
-                  <p className="mb-[20px] md:mb-[40px] lg:mb-[24px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#E2DDDB] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                  <p className="mb-[20px] md:mb-[40px] lg:mb-[24px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#E2DDDB] sm:pl-[30px] md:pl-[64px] lg:pl-[90px] xl:text-center">
                     From Family Enterprise to Institutional Investment Platform
                   </p>
                 </FadeUp>
                 <FadeUp delay={300}>
-                  <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] xl:mb-[121px] text-[18px] sm:text-[25px] lg:text-[32px] text-white sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+                  <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] xl:mb-[121px] text-[18px] sm:text-[25px] lg:text-[32px] text-white sm:pl-[30px] md:pl-[64px] lg:pl-[90px] xl:text-center">
                     The Hayaat story spans nearly a century — rooted in
                     entrepreneurial discipline, shaped by resilience, and now
                     entering a new chapter as a focused institutional investment

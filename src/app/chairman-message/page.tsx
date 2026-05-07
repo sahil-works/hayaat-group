@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import hero from "../../../public/assets/images/about/chairman-new.png";
+import hero from "../../../public/assets/images/about/chairman2.png";
 import leafe from "../../../public/assets/images/leafe.png";
 import Icon from "../../../public/assets/images/h.png";
 import Footer from "@/components/Footer";
@@ -27,7 +27,7 @@ export default function ChairmanMessagePage() {
   return (
     <main>
       {/* Hero */}
-      <div className="relative h-[492px] xl:h-auto">
+      <div className="relative">
         <div className="image w-full">
           <Image
             src={hero}
@@ -76,10 +76,10 @@ export default function ChairmanMessagePage() {
               height={75}
               className="hidden md:block absolute top-[50%] left-0 xl:-left-[56px] md:ml-5 xl:ml-0"
             /> */}
-            <div className="xl:mt-[126px] xl:max-w-[1014px]">
-              <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
+            <div className="xl:mt-[114px] xl:max-w-[1014px]">
+              {/* <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 Chairman’s Message
-              </p>
+              </p> */}
               <p className="mb-[20px] md:mb-[40px] lg:mb-[48px] text-[18px] sm:text-[25px] lg:text-[32px] text-[#BFAF9D] sm:pl-[30px] md:pl-[64px] lg:pl-[90px]">
                 Our journey began with a simple belief: build with conviction
                 and take responsibility for outcomes.
